@@ -15,4 +15,4 @@ struct AcademyProjectAppApp: App {
         }
     }
 }
-koko
+
