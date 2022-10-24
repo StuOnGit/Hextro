@@ -14,6 +14,10 @@
 		8A4A264829016BD9006CCF45 /* AcademyProjectAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A264729016BD9006CCF45 /* AcademyProjectAppTests.swift */; };
 		8A4A265229016BD9006CCF45 /* AcademyProjectAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A265129016BD9006CCF45 /* AcademyProjectAppUITests.swift */; };
 		8A4A265429016BD9006CCF45 /* AcademyProjectAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A265329016BD9006CCF45 /* AcademyProjectAppUITestsLaunchTests.swift */; };
+		E15911A02906C2E30067AAB3 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E159119F2906C2E30067AAB3 /* GoalsView.swift */; };
+		E15911A22906C2F30067AAB3 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A12906C2F30067AAB3 /* TipsView.swift */; };
+		E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A32906C3180067AAB3 /* HighlitsView.swift */; };
+		E15911A62906C63A0067AAB3 /* TipCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A52906C63A0067AAB3 /* TipCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		8A4A264D29016BD9006CCF45 /* AcademyProjectAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcademyProjectAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4A265129016BD9006CCF45 /* AcademyProjectAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyProjectAppUITests.swift; sourceTree = "<group>"; };
 		8A4A265329016BD9006CCF45 /* AcademyProjectAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyProjectAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E159119F2906C2E30067AAB3 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
+		E15911A12906C2F30067AAB3 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
+		E15911A32906C3180067AAB3 /* HighlitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlitsView.swift; sourceTree = "<group>"; };
+		E15911A52906C63A0067AAB3 /* TipCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +102,10 @@
 		8A4A263529016BD8006CCF45 /* AcademyProjectApp */ = {
 			isa = PBXGroup;
 			children = (
+				E159119E2906C2790067AAB3 /* ViewModel */,
+				E159119D2906C2150067AAB3 /* View */,
+				E159119C2906C20B0067AAB3 /* Models */,
 				8A4A263629016BD8006CCF45 /* AcademyProjectAppApp.swift */,
-				8A4A263829016BD8006CCF45 /* ContentView.swift */,
 				8A4A263A29016BD8006CCF45 /* Assets.xcassets */,
 				8A4A263C29016BD8006CCF45 /* Preview Content */,
 			);
@@ -125,6 +135,32 @@
 				8A4A265329016BD9006CCF45 /* AcademyProjectAppUITestsLaunchTests.swift */,
 			);
 			path = AcademyProjectAppUITests;
+			sourceTree = "<group>";
+		};
+		E159119C2906C20B0067AAB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E159119D2906C2150067AAB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A4A263829016BD8006CCF45 /* ContentView.swift */,
+				E159119F2906C2E30067AAB3 /* GoalsView.swift */,
+				E15911A12906C2F30067AAB3 /* TipsView.swift */,
+				E15911A32906C3180067AAB3 /* HighlitsView.swift */,
+				E15911A52906C63A0067AAB3 /* TipCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E159119E2906C2790067AAB3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15911A22906C2F30067AAB3 /* TipsView.swift in Sources */,
+				E15911A02906C2E30067AAB3 /* GoalsView.swift in Sources */,
+				E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */,
 				8A4A263929016BD8006CCF45 /* ContentView.swift in Sources */,
+				E15911A62906C63A0067AAB3 /* TipCardView.swift in Sources */,
 				8A4A263729016BD8006CCF45 /* AcademyProjectAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
