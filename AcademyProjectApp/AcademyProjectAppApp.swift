@@ -16,5 +16,4 @@ struct AcademyProjectAppApp: App {
     }
 }
 
-Cazzo tette culo
 
