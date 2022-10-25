@@ -17,7 +17,7 @@ struct SavedTipsView: View {
     var body: some View {
         
         VStack(spacing: 0){
-            NavigationView {
+           
               
                     List{
                         ForEach(tipCardVM.tips){ tip in
@@ -29,7 +29,7 @@ struct SavedTipsView: View {
                     .searchable(text: $searchText)
                    
                     .navigationTitle("Saved tips")
-                }
+                
           
         }
             
