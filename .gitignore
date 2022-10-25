@@ -91,3 +91,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 AcademyProjectApp.xcodeproj/project.xcworkspace/xcuserdata/francescodestasio.xcuserdatad/UserInterfaceState.xcuserstate
+.DS_Store
