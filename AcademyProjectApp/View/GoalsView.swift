@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+var Goals: [Goal] = [
+    Goal(title: "title", description: "description"),
+    Goal(title: "title2", description: "description2"),
+    Goal(title: "title", description: "description"),
+    Goal(title: "title2", description: "description2"),
+    Goal(title: "title", description: "description")
+]
+
 struct GoalsView: View {
     var body: some View {
         VStack{
@@ -22,15 +30,9 @@ struct GoalsView: View {
                 }
             }
             .padding()
-            
-            List{
-                Text("Ciao")
-                Text("Hello")
-                Text("Buongiorno")
-                Text("Goodmorning")
-                Text("Goodnight")
+            ForEach(Goals) {goal in
+                GoalCard()
             }
-            .listStyle(.plain)
         }
     }
 }

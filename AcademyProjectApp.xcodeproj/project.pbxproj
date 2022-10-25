@@ -14,8 +14,14 @@
 		8A4A264829016BD9006CCF45 /* AcademyProjectAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A264729016BD9006CCF45 /* AcademyProjectAppTests.swift */; };
 		8A4A265229016BD9006CCF45 /* AcademyProjectAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A265129016BD9006CCF45 /* AcademyProjectAppUITests.swift */; };
 		8A4A265429016BD9006CCF45 /* AcademyProjectAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A265329016BD9006CCF45 /* AcademyProjectAppUITestsLaunchTests.swift */; };
+		9128B62929080F2A0075AC47 /* GoalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B62829080F2A0075AC47 /* GoalCard.swift */; };
+		9128B62B290810C70075AC47 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B62A290810C60075AC47 /* Goal.swift */; };
+		9128B62D290815C20075AC47 /* SavedTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B62C290815C20075AC47 /* SavedTipsView.swift */; };
+		9128B62F2908172E0075AC47 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B62E2908172E0075AC47 /* Tip.swift */; };
+		9128B631290818A60075AC47 /* TipCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B630290818A60075AC47 /* TipCardModel.swift */; };
+		9128B63429081A8B0075AC47 /* TipDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B63329081A8B0075AC47 /* TipDB.swift */; };
+		919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F949129081EFD00F0BC83 /* TipOfTodayView.swift */; };
 		E15911A02906C2E30067AAB3 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E159119F2906C2E30067AAB3 /* GoalsView.swift */; };
-		E15911A22906C2F30067AAB3 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A12906C2F30067AAB3 /* TipsView.swift */; };
 		E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A32906C3180067AAB3 /* HighlitsView.swift */; };
 		E15911A62906C63A0067AAB3 /* TipCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A52906C63A0067AAB3 /* TipCardView.swift */; };
 /* End PBXBuildFile section */
@@ -48,8 +54,14 @@
 		8A4A264D29016BD9006CCF45 /* AcademyProjectAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcademyProjectAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4A265129016BD9006CCF45 /* AcademyProjectAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyProjectAppUITests.swift; sourceTree = "<group>"; };
 		8A4A265329016BD9006CCF45 /* AcademyProjectAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyProjectAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9128B62829080F2A0075AC47 /* GoalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCard.swift; sourceTree = "<group>"; };
+		9128B62A290810C60075AC47 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = AcademyProjectApp/View/Goal.swift; sourceTree = SOURCE_ROOT; };
+		9128B62C290815C20075AC47 /* SavedTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTipsView.swift; sourceTree = "<group>"; };
+		9128B62E2908172E0075AC47 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tip.swift; path = AcademyProjectApp/View/Tip.swift; sourceTree = SOURCE_ROOT; };
+		9128B630290818A60075AC47 /* TipCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipCardModel.swift; path = AcademyProjectApp/View/TipCardModel.swift; sourceTree = SOURCE_ROOT; };
+		9128B63329081A8B0075AC47 /* TipDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDB.swift; sourceTree = "<group>"; };
+		919F949129081EFD00F0BC83 /* TipOfTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOfTodayView.swift; sourceTree = "<group>"; };
 		E159119F2906C2E30067AAB3 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
-		E15911A12906C2F30067AAB3 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		E15911A32906C3180067AAB3 /* HighlitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlitsView.swift; sourceTree = "<group>"; };
 		E15911A52906C63A0067AAB3 /* TipCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,9 +149,20 @@
 			path = AcademyProjectAppUITests;
 			sourceTree = "<group>";
 		};
+		9128B63229081A750075AC47 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				9128B63329081A8B0075AC47 /* TipDB.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		E159119C2906C20B0067AAB3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9128B63229081A750075AC47 /* Database */,
+				9128B62A290810C60075AC47 /* Goal.swift */,
+				9128B62E2908172E0075AC47 /* Tip.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,9 +172,11 @@
 			children = (
 				8A4A263829016BD8006CCF45 /* ContentView.swift */,
 				E159119F2906C2E30067AAB3 /* GoalsView.swift */,
-				E15911A12906C2F30067AAB3 /* TipsView.swift */,
 				E15911A32906C3180067AAB3 /* HighlitsView.swift */,
 				E15911A52906C63A0067AAB3 /* TipCardView.swift */,
+				9128B62829080F2A0075AC47 /* GoalCard.swift */,
+				9128B62C290815C20075AC47 /* SavedTipsView.swift */,
+				919F949129081EFD00F0BC83 /* TipOfTodayView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +184,7 @@
 		E159119E2906C2790067AAB3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9128B630290818A60075AC47 /* TipCardModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -293,10 +319,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E15911A22906C2F30067AAB3 /* TipsView.swift in Sources */,
+				9128B62D290815C20075AC47 /* SavedTipsView.swift in Sources */,
+				9128B631290818A60075AC47 /* TipCardModel.swift in Sources */,
+				9128B62B290810C70075AC47 /* Goal.swift in Sources */,
 				E15911A02906C2E30067AAB3 /* GoalsView.swift in Sources */,
 				E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */,
+				919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */,
 				8A4A263929016BD8006CCF45 /* ContentView.swift in Sources */,
+				9128B62929080F2A0075AC47 /* GoalCard.swift in Sources */,
+				9128B62F2908172E0075AC47 /* Tip.swift in Sources */,
+				9128B63429081A8B0075AC47 /* TipDB.swift in Sources */,
 				E15911A62906C63A0067AAB3 /* TipCardView.swift in Sources */,
 				8A4A263729016BD8006CCF45 /* AcademyProjectAppApp.swift in Sources */,
 			);
