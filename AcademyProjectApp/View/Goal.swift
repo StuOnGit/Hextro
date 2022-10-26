@@ -12,7 +12,10 @@ struct Goal: Identifiable {
     
     var title: String
     var description: String
-    var completed: Bool = false
+    
     var isAdded: Bool = false
+    var completed: Bool = false
+    var completionDate : Date?
+    var rating: RatingEnum?
     //TODO: implement other stuff
 }
