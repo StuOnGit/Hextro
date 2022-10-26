@@ -1,8 +1,8 @@
 //
-//  GoalsView.swift
+//  GoalsDashboardView.swift
 //  AcademyProjectApp
 //
-//  Created by Valentina Russo on 24/10/22.
+//  Created by Francesco De Stasio on 26/10/22.
 //
 
 import SwiftUI
