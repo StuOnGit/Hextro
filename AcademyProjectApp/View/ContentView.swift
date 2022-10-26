@@ -9,24 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
+        
         NavigationView(){
-            VStack {
-                TipsView()
-                Divider()
-                GoalsView()
-                Text("TEST")
-            }
-            .padding()
-            .navigationTitle("Dashboard")
-            .toolbar {
-                                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                                    NavigationLink(destination: ContentView()) {
-                                        Image(systemName: "gearshape").font(.title)
+            ScrollView {
+                VStack {
+                    TipOfTodayView()
+                    Divider()
+                    GoalsDashboardView()
+                    Divider()
+                    HighlitsView()
+                    Spacer()
+                }
+                .padding()
+                .navigationTitle("Dashboard")
+                .toolbar {
+                                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                                        NavigationLink(destination: ContentView()) {
+                                            Image(systemName: "gearshape").foregroundColor(Color.black).font(.title2)
+                                                .fontWeight(.bold)
+                                        }
                                     }
                                 }
-                            }
+            }
+                
+          
         }
         .navigationViewStyle(.stack)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

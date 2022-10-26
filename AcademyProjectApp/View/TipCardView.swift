@@ -8,24 +8,28 @@
 import SwiftUI
 
 struct TipCardView: View {
+    
+    var tip : Tip
+    
+    
     var body: some View {
        ZStack{
             VStack(alignment: .leading, spacing: 10){
                 
                 HStack(alignment: .top){
-                    Text("Today's Tip")
+                    Text(tip.title)
                         .foregroundColor(.white)
                         .font(.system(size: 28))
                         .fontWeight(.bold)
                     
                     Spacer()
                     
-                    Image(systemName: "heart")
+                    Image(systemName: tip.icon)
                         .font(.system(size: 25))
                         .foregroundColor(.white)
                 }
                 
-                Text("Lorem ipsum bla vla bla ghjdshjgdsfdhgvbfhdjsgfhjdgfjdhfsgfjhsdgzfhj")
+                Text(tip.description)
                     .foregroundColor(.white)
         
             }
@@ -39,6 +43,6 @@ struct TipCardView: View {
 
 struct TipCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TipCardView()
+        TipCardView(tip: tipsDB[0])
     }
 }
