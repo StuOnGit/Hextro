@@ -11,8 +11,7 @@ struct CompletedGoalsView: View {
     
     
     var body: some View {
-        
-        VStack{
+        VStack(alignment: .leading){
             HStack{
                 Text("Goals")
                     .fontWeight(.bold)
@@ -20,12 +19,13 @@ struct CompletedGoalsView: View {
                 Spacer()
                 
             }
-            .padding()
-            
-            
+            .padding(.top, 5)
+            ForEach(Goals) {goal in
+                GoalCard()
+            }
+          
         }
-
-        
+        .padding(.bottom, 10)
     }
 }
 

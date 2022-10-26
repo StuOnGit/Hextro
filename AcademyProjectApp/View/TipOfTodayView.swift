@@ -14,24 +14,27 @@ struct TipOfTodayView: View {
     var body: some View {
         
         
-            VStack(spacing: 6){
-                TipCardView(tip: tipExample1)
-                
-                
-                NavigationLink(destination: SavedTipsView(), isActive: $savedTipsIsClicked) { EmptyView() }
-
-                                    Button() {
-                                        savedTipsIsClicked = true
-                                    }label: {
-                                        Label("Saved Tips", systemImage: "heart.fill")
-                                    }
-                                    .padding()
-                                    .background {
-                                        RoundedRectangle(cornerRadius: 8)
-                                        .frame(height: 50)
-                                        .foregroundColor(.blue.opacity(0.15))
-                                    }
-    
+        VStack(spacing: 6){
+            TipCardView(tip: tipExample1)
+            
+            
+            NavigationLink(destination: SavedTipsView(), isActive: $savedTipsIsClicked) { EmptyView() }
+            
+            Button() {
+                savedTipsIsClicked = true
+            }label: {
+                Label("Saved Tips", systemImage: "heart.fill")
+            }
+            
+            .padding(20)
+            .background {
+                RoundedRectangle(cornerRadius: 8)
+                    .frame(height: 50)
+                    .foregroundColor(.blue.opacity(0.15))
+            }
+            .padding(.bottom, 10)
+            Divider()
+            
         }
         
     }

@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        
         NavigationView(){
             ScrollView {
                 VStack {
@@ -24,16 +23,25 @@ struct ContentView: View {
                 .padding()
                 .navigationTitle("Dashboard")
                 .toolbar {
-                                    ToolbarItemGroup(placement: .navigationBarTrailing) {
-                                        NavigationLink(destination: ContentView()) {
-                                            Image(systemName: "gearshape").foregroundColor(Color.black).font(.title2)
-                                                .fontWeight(.bold)
-                                        }
-                                    }
-                                }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: SettingsView()) {
+                            Image(systemName: "gearshape")
+                                .font(.system(size: 20))
+                                .foregroundColor(.black)
+                            
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink(destination: ProfileView()) {
+                            Image(systemName: "person.circle")
+                                .font(.system(size: 22))
+                                .foregroundColor(.black)
+                        }
+                    }
+                }
             }
-                
-          
+            
+            
         }
         .navigationViewStyle(.stack)
         .navigationBarTitleDisplayMode(.inline)
