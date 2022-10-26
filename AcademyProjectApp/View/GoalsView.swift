@@ -17,7 +17,7 @@ var Goals: [Goal] = [
 
 struct GoalsView: View {
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
             HStack{
                 Text("Goals")
                     .fontWeight(.bold)
@@ -29,11 +29,13 @@ struct GoalsView: View {
                         .font(.system(size: 20))
                 }
             }
-            .padding()
+            .padding(.top, 5)
             ForEach(Goals) {goal in
                 GoalCard()
             }
+          
         }
+        .padding(.bottom, 10)
     }
 }
 

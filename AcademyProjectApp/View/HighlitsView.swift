@@ -27,14 +27,16 @@ struct HighlitsView: View {
                 Text("Week").tag(2)
                 Text("Month").tag(3)
                 Text("Year").tag(4)
-              //  Text("All").tag(4)
+                //  Text("All").tag(4)
             }
             .pickerStyle(.segmented)
             
             Text(String(pickerChoose))
+                
             
-        }.padding()
-      
+        }
+        .padding(.top, 5)
+        
         
         
     }

@@ -10,13 +10,14 @@ import SwiftUI
 struct TipCardView: View {
     
     var tip : Tip
+    @State private var isClicked = false
     
     
     var body: some View {
-       ZStack{
-            VStack(alignment: .leading, spacing: 10){
+        ZStack{
+            VStack(alignment: .leading, spacing: 15){
                 
-                HStack(alignment: .top){
+                HStack(alignment: .firstTextBaseline){
                     Text(tip.title)
                         .foregroundColor(.white)
                         .font(.system(size: 28))
@@ -24,20 +25,30 @@ struct TipCardView: View {
                     
                     Spacer()
                     
-                    Image(systemName: tip.icon)
-                        .font(.system(size: 25))
-                        .foregroundColor(.white)
+                    Button(action: {
+                        self.isClicked.toggle()}) {
+                        Image(systemName: self.isClicked == true ? "heart.fill" : "heart")
+                    }
+                    .foregroundColor(Color.white)
+                    .font(.system(size: 28))
+                    
+                    
+                    .alignmentGuide(.firstTextBaseline) { context in
+                        context[.bottom] - 0.2 * context.height
+                    }
+                    
                 }
                 
                 Text(tip.description)
                     .foregroundColor(.white)
-        
+                
             }
             .padding(20)
-       }.background {
-           RoundedRectangle(cornerRadius: 8)
-               .foregroundColor(.blue)
-       }
+        }
+        .background {
+            RoundedRectangle(cornerRadius: 8)
+                .foregroundColor(.blue)
+        }
     }
 }
 
