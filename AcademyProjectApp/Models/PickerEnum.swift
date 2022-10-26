@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+
+enum PickerEnum : String{
+    case Day
+    case Week
+    case Month
+    case Year
+    
+}

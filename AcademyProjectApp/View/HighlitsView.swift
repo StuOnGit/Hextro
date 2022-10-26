@@ -11,7 +11,7 @@ import SwiftUI
 
 struct HighlitsView: View {
     
-    @State var pickerChoose: Int = 1
+    @State var pickerChoose: PickerEnum = PickerEnum.Day
     
     var body: some View {
         VStack{
@@ -23,15 +23,15 @@ struct HighlitsView: View {
                 Spacer()
             }
             Picker(selection: $pickerChoose, label: Text("Picker")) {
-                Text("Day").tag(1)
-                Text("Week").tag(2)
-                Text("Month").tag(3)
-                Text("Year").tag(4)
-              //  Text("All").tag(4)
+                Text(PickerEnum.Day.rawValue).tag(PickerEnum.Day)
+                Text(PickerEnum.Week.rawValue).tag(PickerEnum.Week)
+                Text(PickerEnum.Month.rawValue).tag(PickerEnum.Month)
+                Text(PickerEnum.Year.rawValue).tag(PickerEnum.Year)
+              //  Text("All").tag(PickerEnum.All)
             }
             .pickerStyle(.segmented)
             
-            Text(String(pickerChoose))
+            Text(pickerChoose.rawValue)
             
         }.padding()
       

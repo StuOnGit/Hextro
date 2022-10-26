@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+var goalDB : [Goal] = [
+
+    Goal(title: "title", description: "description"),
+    Goal(title: "title2", description: "description2"),
+    Goal(title: "title", description: "description"),
+    Goal(title: "title2", description: "description2"),
+    Goal(title: "title", description: "description")
+
+    //TODO: put real datas
+]

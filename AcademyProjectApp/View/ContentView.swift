@@ -24,16 +24,16 @@ struct ContentView: View {
                 .padding()
                 .navigationTitle("Dashboard")
                 .toolbar {
-                                    ToolbarItemGroup(placement: .navigationBarTrailing) {
-                                        NavigationLink(destination: ContentView()) {
-                                            Image(systemName: "gearshape").foregroundColor(Color.black).font(.title2)
-                                                .fontWeight(.bold)
-                                        }
-                                    }
-                                }
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: ContentView()) {
+                            Image(systemName: "gearshape").foregroundColor(Color.black).font(.title2)
+                                .fontWeight(.bold)
+                        }
+                    }
+                }
             }
-                
-          
+            
+            
         }
         .navigationViewStyle(.stack)
         .navigationBarTitleDisplayMode(.inline)
