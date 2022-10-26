@@ -24,6 +24,10 @@
 		9128B63429081A8B0075AC47 /* TipDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B63329081A8B0075AC47 /* TipDB.swift */; };
 		919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F949129081EFD00F0BC83 /* TipOfTodayView.swift */; };
 		91B58442290967360029504E /* GoalsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B58441290967360029504E /* GoalsDashboardView.swift */; };
+		91DFB52D29085B8B008B3869 /* GoalDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DFB52C29085B8B008B3869 /* GoalDB.swift */; };
+		91DFB52F29088E6E008B3869 /* PickerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DFB52E29088E6E008B3869 /* PickerEnum.swift */; };
+		91DFB53129091AE9008B3869 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DFB53029091AE9008B3869 /* User.swift */; };
+		91DFB53329092638008B3869 /* RatingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DFB53229092638008B3869 /* RatingEnum.swift */; };
 		E15911A02906C2E30067AAB3 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E159119F2906C2E30067AAB3 /* GoalsView.swift */; };
 		E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A32906C3180067AAB3 /* HighlitsView.swift */; };
 		E15911A62906C63A0067AAB3 /* TipCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A52906C63A0067AAB3 /* TipCardView.swift */; };
@@ -67,6 +71,10 @@
 		9128B63329081A8B0075AC47 /* TipDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDB.swift; sourceTree = "<group>"; };
 		919F949129081EFD00F0BC83 /* TipOfTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOfTodayView.swift; sourceTree = "<group>"; };
 		91B58441290967360029504E /* GoalsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsDashboardView.swift; sourceTree = "<group>"; };
+		91DFB52C29085B8B008B3869 /* GoalDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDB.swift; sourceTree = "<group>"; };
+		91DFB52E29088E6E008B3869 /* PickerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerEnum.swift; sourceTree = "<group>"; };
+		91DFB53029091AE9008B3869 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		91DFB53229092638008B3869 /* RatingEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingEnum.swift; sourceTree = "<group>"; };
 		E159119F2906C2E30067AAB3 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		E15911A32906C3180067AAB3 /* HighlitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlitsView.swift; sourceTree = "<group>"; };
 		E15911A52906C63A0067AAB3 /* TipCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCardView.swift; sourceTree = "<group>"; };
@@ -159,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				9128B63329081A8B0075AC47 /* TipDB.swift */,
+				91DFB52C29085B8B008B3869 /* GoalDB.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -169,6 +178,9 @@
 				9128B63229081A750075AC47 /* Database */,
 				9128B62A290810C60075AC47 /* Goal.swift */,
 				9128B62E2908172E0075AC47 /* Tip.swift */,
+				91DFB52E29088E6E008B3869 /* PickerEnum.swift */,
+				91DFB53029091AE9008B3869 /* User.swift */,
+				91DFB53229092638008B3869 /* RatingEnum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,8 +346,12 @@
 				9128B62B290810C70075AC47 /* Goal.swift in Sources */,
 				E15911A02906C2E30067AAB3 /* GoalsView.swift in Sources */,
 				E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */,
+				91DFB53329092638008B3869 /* RatingEnum.swift in Sources */,
 				919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */,
+				91DFB52D29085B8B008B3869 /* GoalDB.swift in Sources */,
 				8A4A263929016BD8006CCF45 /* ContentView.swift in Sources */,
+				91DFB53129091AE9008B3869 /* User.swift in Sources */,
+				91DFB52F29088E6E008B3869 /* PickerEnum.swift in Sources */,
 				9128B62929080F2A0075AC47 /* GoalCard.swift in Sources */,
 				9128B62F2908172E0075AC47 /* Tip.swift in Sources */,
 				9128B63429081A8B0075AC47 /* TipDB.swift in Sources */,

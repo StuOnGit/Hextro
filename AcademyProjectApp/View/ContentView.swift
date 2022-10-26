@@ -23,6 +23,7 @@ struct ContentView: View {
                 .padding()
                 .navigationTitle("Dashboard")
                 .toolbar {
+
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: SettingsView()) {
                             Image(systemName: "gearshape")
@@ -36,6 +37,7 @@ struct ContentView: View {
                             Image(systemName: "person.circle")
                                 .font(.system(size: 22))
                                 .foregroundColor(.black)
+
                         }
                     }
                 }
