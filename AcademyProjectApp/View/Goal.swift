@@ -18,4 +18,5 @@ struct Goal: Identifiable {
     var completionDate : Date?
     var rating: RatingEnum?
     //TODO: implement other stuff
+    
 }
