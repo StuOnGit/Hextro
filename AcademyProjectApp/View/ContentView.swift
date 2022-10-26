@@ -16,7 +16,7 @@ struct ContentView: View {
                 VStack {
                     TipOfTodayView()
                     Divider()
-                    GoalsView()
+                    GoalsDashboardView()
                     Divider()
                     HighlitsView()
                     Spacer()
