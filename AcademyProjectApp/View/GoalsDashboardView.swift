@@ -29,11 +29,12 @@ struct GoalsDashboardView: View {
                         .font(.system(size: 20))
                 }
             }
-            .padding()
+            .padding(.top, 5)
             ForEach(Goals) {goal in
                 GoalCard()
             }
         }
+        .padding(.bottom, 10)
     }
 }
 

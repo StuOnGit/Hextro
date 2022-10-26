@@ -24,7 +24,6 @@
 		9128B63429081A8B0075AC47 /* TipDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B63329081A8B0075AC47 /* TipDB.swift */; };
 		919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F949129081EFD00F0BC83 /* TipOfTodayView.swift */; };
 		91B58442290967360029504E /* GoalsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B58441290967360029504E /* GoalsDashboardView.swift */; };
-		E15911A02906C2E30067AAB3 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E159119F2906C2E30067AAB3 /* GoalsView.swift */; };
 		E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A32906C3180067AAB3 /* HighlitsView.swift */; };
 		E15911A62906C63A0067AAB3 /* TipCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A52906C63A0067AAB3 /* TipCardView.swift */; };
 /* End PBXBuildFile section */
@@ -67,7 +66,6 @@
 		9128B63329081A8B0075AC47 /* TipDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDB.swift; sourceTree = "<group>"; };
 		919F949129081EFD00F0BC83 /* TipOfTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOfTodayView.swift; sourceTree = "<group>"; };
 		91B58441290967360029504E /* GoalsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsDashboardView.swift; sourceTree = "<group>"; };
-		E159119F2906C2E30067AAB3 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
 		E15911A32906C3180067AAB3 /* HighlitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlitsView.swift; sourceTree = "<group>"; };
 		E15911A52906C63A0067AAB3 /* TipCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				8A4A263829016BD8006CCF45 /* ContentView.swift */,
-				E159119F2906C2E30067AAB3 /* GoalsView.swift */,
 				E15911A32906C3180067AAB3 /* HighlitsView.swift */,
 				E15911A52906C63A0067AAB3 /* TipCardView.swift */,
 				9128B62829080F2A0075AC47 /* GoalCard.swift */,
@@ -332,7 +329,6 @@
 				9128B631290818A60075AC47 /* TipCardModel.swift in Sources */,
 				91B58442290967360029504E /* GoalsDashboardView.swift in Sources */,
 				9128B62B290810C70075AC47 /* Goal.swift in Sources */,
-				E15911A02906C2E30067AAB3 /* GoalsView.swift in Sources */,
 				E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */,
 				919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */,
 				8A4A263929016BD8006CCF45 /* ContentView.swift in Sources */,
