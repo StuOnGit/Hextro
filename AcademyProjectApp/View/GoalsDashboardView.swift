@@ -16,6 +16,10 @@ var Goals: [Goal] = [
 ]
 
 struct GoalsDashboardView: View {
+    @State private var mainActive = false
+    @State private var completedGoalClicked = false
+    @State var addGoalIsClicked = false
+    
     var body: some View {
         VStack{
             HStack{
@@ -23,7 +27,11 @@ struct GoalsDashboardView: View {
                     .fontWeight(.bold)
                     .font(.system(size: 28))
                 Spacer()
+                
+                NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked), isActive: $mainActive) { EmptyView() }
                 Button{
+                    mainActive = true
+                    completedGoalClicked = true
                 } label: {
                     Label(" ", systemImage: "medal")
                         .font(.system(size: 20))
@@ -32,6 +40,7 @@ struct GoalsDashboardView: View {
             .padding(.top, 5)
             ForEach(Goals) {goal in
                 GoalCard()
+                    .padding(.vertical, 1)
             }
         }
         .padding(.bottom, 10)
