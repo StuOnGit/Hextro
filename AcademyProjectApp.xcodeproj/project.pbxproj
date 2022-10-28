@@ -15,6 +15,7 @@
 		8A4A265229016BD9006CCF45 /* AcademyProjectAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A265129016BD9006CCF45 /* AcademyProjectAppUITests.swift */; };
 		8A4A265429016BD9006CCF45 /* AcademyProjectAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A265329016BD9006CCF45 /* AcademyProjectAppUITestsLaunchTests.swift */; };
 		8AB283E82909397A00AED074 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB283E72909397A00AED074 /* ProfileView.swift */; };
+		8AB283EC290985F900AED074 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB283EB290985F900AED074 /* OnboardingView.swift */; };
 		8ACAC51029087B8000EDFF73 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACAC50F29087B8000EDFF73 /* SettingsView.swift */; };
 		9128B62929080F2A0075AC47 /* GoalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B62829080F2A0075AC47 /* GoalCard.swift */; };
 		9128B62B290810C70075AC47 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B62A290810C60075AC47 /* Goal.swift */; };
@@ -62,6 +63,7 @@
 		8A4A265129016BD9006CCF45 /* AcademyProjectAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyProjectAppUITests.swift; sourceTree = "<group>"; };
 		8A4A265329016BD9006CCF45 /* AcademyProjectAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyProjectAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8AB283E72909397A00AED074 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8AB283EB290985F900AED074 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8ACAC50F29087B8000EDFF73 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9128B62829080F2A0075AC47 /* GoalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCard.swift; sourceTree = "<group>"; };
 		9128B62A290810C60075AC47 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = AcademyProjectApp/View/Goal.swift; sourceTree = SOURCE_ROOT; };
@@ -198,6 +200,7 @@
 				8ACAC50F29087B8000EDFF73 /* SettingsView.swift */,
 				8AB283E72909397A00AED074 /* ProfileView.swift */,
 				91B5844329096E930029504E /* GoalsView.swift */,
+				8AB283EB290985F900AED074 /* OnboardingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				91DFB53129091AE9008B3869 /* User.swift in Sources */,
 				91DFB52F29088E6E008B3869 /* PickerEnum.swift in Sources */,
 				9128B62929080F2A0075AC47 /* GoalCard.swift in Sources */,
+				8AB283EC290985F900AED074 /* OnboardingView.swift in Sources */,
 				9128B62F2908172E0075AC47 /* Tip.swift in Sources */,
 				9128B63429081A8B0075AC47 /* TipDB.swift in Sources */,
 				E15911A62906C63A0067AAB3 /* TipCardView.swift in Sources */,
@@ -525,7 +529,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,7 +559,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
