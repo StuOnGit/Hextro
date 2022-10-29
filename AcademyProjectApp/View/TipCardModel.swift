@@ -8,5 +8,5 @@
 import Foundation
 
 class TipCardModel : ObservableObject {
-    @Published var tips = tipsDB
+    @Published var tips = User.instance.savedTips
 }

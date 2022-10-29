@@ -15,7 +15,13 @@ var Goals: [Goal] = [
     Goal(title: "title", description: "description")
 ]
 
+
+
 struct GoalsDashboardView: View {
+    
+//    @ObservedObject
+    @ObservedObject var goalsToDoVM = GoalToDoVM()
+    
     var body: some View {
         VStack{
             HStack{
@@ -30,9 +36,13 @@ struct GoalsDashboardView: View {
                 }
             }
             .padding(.top, 5)
-            ForEach(Goals) {goal in
-                GoalCard()
+            
+
+            ForEach(goalsToDoVM.toDoGoals) { goal in
+                GoalCard(goal: goal)
             }
+            
+            Text(String(goalsToDoVM.toDoGoals.count))
         }
         .padding(.bottom, 10)
     }

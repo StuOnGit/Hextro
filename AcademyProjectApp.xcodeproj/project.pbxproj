@@ -22,6 +22,7 @@
 		9128B62F2908172E0075AC47 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B62E2908172E0075AC47 /* Tip.swift */; };
 		9128B631290818A60075AC47 /* TipCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B630290818A60075AC47 /* TipCardModel.swift */; };
 		9128B63429081A8B0075AC47 /* TipDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9128B63329081A8B0075AC47 /* TipDB.swift */; };
+		912CCF71290ACD4B009BC0D4 /* GoalToDoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912CCF70290ACD4B009BC0D4 /* GoalToDoVM.swift */; };
 		919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F949129081EFD00F0BC83 /* TipOfTodayView.swift */; };
 		91B58442290967360029504E /* GoalsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B58441290967360029504E /* GoalsDashboardView.swift */; };
 		91B5844429096E930029504E /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5844329096E930029504E /* GoalsView.swift */; };
@@ -69,6 +70,7 @@
 		9128B62E2908172E0075AC47 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tip.swift; path = AcademyProjectApp/View/Tip.swift; sourceTree = SOURCE_ROOT; };
 		9128B630290818A60075AC47 /* TipCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipCardModel.swift; path = AcademyProjectApp/View/TipCardModel.swift; sourceTree = SOURCE_ROOT; };
 		9128B63329081A8B0075AC47 /* TipDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDB.swift; sourceTree = "<group>"; };
+		912CCF70290ACD4B009BC0D4 /* GoalToDoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalToDoVM.swift; path = AcademyProjectApp/View/GoalToDoVM.swift; sourceTree = SOURCE_ROOT; };
 		919F949129081EFD00F0BC83 /* TipOfTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipOfTodayView.swift; sourceTree = "<group>"; };
 		91B58441290967360029504E /* GoalsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsDashboardView.swift; sourceTree = "<group>"; };
 		91B5844329096E930029504E /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				9128B630290818A60075AC47 /* TipCardModel.swift */,
+				912CCF70290ACD4B009BC0D4 /* GoalToDoVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				91B5844429096E930029504E /* GoalsView.swift in Sources */,
 				E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */,
 				91DFB53329092638008B3869 /* RatingEnum.swift in Sources */,
+				912CCF71290ACD4B009BC0D4 /* GoalToDoVM.swift in Sources */,
 				919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */,
 				91DFB52D29085B8B008B3869 /* GoalDB.swift in Sources */,
 				8A4A263929016BD8006CCF45 /* ContentView.swift in Sources */,

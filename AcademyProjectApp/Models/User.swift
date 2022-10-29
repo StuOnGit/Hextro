@@ -7,24 +7,51 @@
 
 import Foundation
 
+ 
+private let MAX_GOALS_TO_DO = 5
+
 class User {
     
     var name : String
     var toDoGoals : [Goal]
-    static var instance = User()
+    var savedTips: [Tip]
+    var completedGoals : [Goal]
     
+    static var instance = User()
+
     private init(){
         name = ""
         toDoGoals = []
+        for _ in 1...MAX_GOALS_TO_DO {
+            toDoGoals.append(Goal(title: "", description: ""))
+        }
+        savedTips = []
+        completedGoals = []
+    }
+    
+    public func addSavedTip(tip: Tip){
+        savedTips.append(tip)
+    }
+    
+    public func removeSavedTip(tip: Tip){
+     //   var index = savedTips.index(of: tip)
+     //   savedTips.remove(at: index)
+    }
+    
+    public func addToCompletedGoal(completedGoal : Goal){
+        completedGoals.append(completedGoal)
     }
     
     
-    
-    public func addGoal(){
-        
+    public func addToDoGoal(toDoGoal : Goal, index: Int){
+        if(index <= MAX_GOALS_TO_DO && index >= 0){
+            toDoGoals.insert(toDoGoal, at: index)
+        }else{
+            print("Error..")
+        }
     }
     
-    public func removeGoal(goal : Goal){
+    public func removeToDoGoal(goal : Goal){
     
     }
     

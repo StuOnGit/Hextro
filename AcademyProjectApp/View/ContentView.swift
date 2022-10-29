@@ -14,6 +14,7 @@ struct ContentView: View {
             ScrollView {
                 VStack {
                     TipOfTodayView()
+                    Divider()
                     GoalsDashboardView()
                     Divider()
                     HighlitsView()
