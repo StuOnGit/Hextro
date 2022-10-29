@@ -8,50 +8,60 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("userOnboarded") var userOnboarded: Bool = false
+    
     var body: some View {
-        
-        NavigationView(){
-            ScrollView {
-                VStack {
-                    TipOfTodayView()
-                    Divider()
-                    GoalsDashboardView()
-                    Divider()
-                    HighlitsView()
-                    Spacer()
-                }
-                .padding()
-                .navigationTitle("Dashboard")
-                .toolbar {
 
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: SettingsView()) {
-                            Image(systemName: "gearshape")
-                                .font(.system(size: 20))
-                                .foregroundColor(.black)
-                            
+        if userOnboarded{
+            
+            
+            NavigationView(){
+                ScrollView {
+                    VStack {
+                        TipOfTodayView()
+                        Divider()
+                        GoalsDashboardView()
+                        Divider()
+                        HighlitsView()
+                        Spacer()
+                    }
+                    .padding()
+                    .navigationTitle("Dashboard")
+                    .toolbar {
+                        
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            NavigationLink(destination: SettingsView()) {
+                                Image(systemName: "gearshape")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.black)
+                                
+                            }
+                        }
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            NavigationLink(destination: ProfileView()) {
+                                Image(systemName: "person.circle")
+                                    .font(.system(size: 22))
+                                    .foregroundColor(.black)
+                                
+                            }
                         }
                     }
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: ProfileView()) {
-                            Image(systemName: "person.circle")
-                                .font(.system(size: 22))
-                                .foregroundColor(.black)
-
-                        }
-                    }
                 }
+                
+                
             }
             
+            .navigationViewStyle(.stack)
+            .navigationBarTitleDisplayMode(.inline)
             
+        } else {
+            OnboardingView()
         }
-        .navigationViewStyle(.stack)
-        .navigationBarTitleDisplayMode(.inline)
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
 }
