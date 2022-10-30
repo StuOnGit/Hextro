@@ -11,14 +11,16 @@ struct GoalCard: View {
     @State private var mainActive = false
     @State var addGoalIsClicked = false
     @State private var completedGoalClicked = false
+    @State var title: String = ""
      
     var body: some View {
          
         VStack{
-            NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked), isActive: $mainActive) {EmptyView()}
+            NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title), isActive: $mainActive) {EmptyView()}
             Button() {
                 mainActive = true
                 addGoalIsClicked = true
+                title = "Add "
             }label: {
                 Label("Add new Goal", systemImage: "plus")
                     .frame(maxWidth: .infinity)

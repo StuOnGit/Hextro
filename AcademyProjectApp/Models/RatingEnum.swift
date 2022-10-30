@@ -8,10 +8,10 @@
 import Foundation
 
 
-enum RatingEnum : Int{
-    case Sad = 1
-    case Normal = 2
-    case Good = 3
-    case VeryGood = 4
-    case Incredible = 5
+enum RatingEnum : String, CaseIterable{
+    case Bad = "Bad"
+    case Poor = "Poor"
+    case Average = "Average"
+    case Good = "Good"
+    case Happy = "Happy"
 }

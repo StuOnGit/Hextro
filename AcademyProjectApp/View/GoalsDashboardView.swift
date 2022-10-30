@@ -19,6 +19,7 @@ struct GoalsDashboardView: View {
     @State private var mainActive = false
     @State private var completedGoalClicked = false
     @State var addGoalIsClicked = false
+    @State var title: String = ""
     
     var body: some View {
         VStack{
@@ -28,10 +29,11 @@ struct GoalsDashboardView: View {
                     .font(.system(size: 28))
                 Spacer()
                 
-                NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked), isActive: $mainActive) { EmptyView() }
+                NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title), isActive: $mainActive) { EmptyView() }
                 Button{
                     mainActive = true
                     completedGoalClicked = true
+                    title = "Completed "
                 } label: {
                     Label(" ", systemImage: "medal")
                         .font(.system(size: 20))

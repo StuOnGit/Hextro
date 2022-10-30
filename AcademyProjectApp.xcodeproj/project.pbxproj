@@ -32,6 +32,7 @@
 		E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A32906C3180067AAB3 /* HighlitsView.swift */; };
 		E15911A62906C63A0067AAB3 /* TipCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A52906C63A0067AAB3 /* TipCardView.swift */; };
 		E18A5EFD29097BF7004257C7 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A5EFC29097BF7004257C7 /* ModalView.swift */; };
+		E18A5EFF290C25AF004257C7 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A5EFE290C25AF004257C7 /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E15911A32906C3180067AAB3 /* HighlitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlitsView.swift; sourceTree = "<group>"; };
 		E15911A52906C63A0067AAB3 /* TipCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCardView.swift; sourceTree = "<group>"; };
 		E18A5EFC29097BF7004257C7 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		E18A5EFE290C25AF004257C7 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				8AB283E72909397A00AED074 /* ProfileView.swift */,
 				91B5844329096E930029504E /* GoalsView.swift */,
 				E18A5EFC29097BF7004257C7 /* ModalView.swift */,
+				E18A5EFE290C25AF004257C7 /* RatingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				9128B62B290810C70075AC47 /* Goal.swift in Sources */,
 				91B5844429096E930029504E /* GoalsView.swift in Sources */,
 				E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */,
+				E18A5EFF290C25AF004257C7 /* RatingView.swift in Sources */,
 				91DFB53329092638008B3869 /* RatingEnum.swift in Sources */,
 				919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */,
 				91DFB52D29085B8B008B3869 /* GoalDB.swift in Sources */,

@@ -14,27 +14,14 @@ struct GoalsView: View {
     @State private var showSheet = false
     @Binding var completedGoalClicked: Bool
     @Binding var addGoalIsClicked: Bool
+    @State var title: String
 
-//    @State var title: String = " "
-//
-//    func showTitle(){
-//        if (addGoalIsClicked == true) {
-//            title = "Add "
-//        }
-//        else {
-//            title = "Completed "
-//        }
-//    }
-//    showTitle()
-
-    
     var body: some View {
         
         ScrollView {
             VStack(){
                 HStack{
-                    //Text("\(title)Goals")
-                    Text("Goals")
+                    Text("\(title)goals")
                         .fontWeight(.bold)
                         .font(.system(size: 28))
                     Spacer()
@@ -69,7 +56,7 @@ struct GoalsView: View {
 
 struct GoalsView_Previews: PreviewProvider {
     static var previews: some View {
-//        GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false), title = "")
-        GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false))
+        
+        GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false), title: "")
     }
 }
