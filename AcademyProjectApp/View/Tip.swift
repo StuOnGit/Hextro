@@ -13,5 +13,5 @@ struct Tip : Identifiable {
     var title : String
     var icon : String
     var description : String
-    
+    var goal : Goal?
 }

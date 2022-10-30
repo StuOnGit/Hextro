@@ -8,15 +8,23 @@
 import SwiftUI
 
 struct GoalCard: View {
+
     @State private var mainActive = false
     @State var addGoalIsClicked = false
     @State private var completedGoalClicked = false
     @State var title: String = ""
-     
+   
+    var goal : Goal
+    
     var body: some View {
          
         VStack{
             NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title), isActive: $mainActive) {EmptyView()}
+            
+        
+        //if goal == nil -> button else goal button
+        
+        if (goal.title == "") {
             Button() {
                 mainActive = true
                 addGoalIsClicked = true
@@ -33,14 +41,25 @@ struct GoalCard: View {
                     .frame(maxWidth: .infinity)
                     .foregroundColor(.gray.opacity(0.15))
             }
+        }else{
+            Button() {} label: {
+                Label(goal.title + "\n" + goal.description, systemImage: "")
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(Color.blue)
+            }
+            .padding()
+            .background {
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(.gray.opacity(0.15))
+            }
         }
-                
-        
+
     }
 }
 
 struct GoalCard_Previews: PreviewProvider {
     static var previews: some View {
-        GoalCard()
+        GoalCard(goal: goalDB[0])
     }
 }

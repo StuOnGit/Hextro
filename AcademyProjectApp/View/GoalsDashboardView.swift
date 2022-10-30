@@ -21,6 +21,8 @@ struct GoalsDashboardView: View {
     @State var addGoalIsClicked = false
     @State var title: String = ""
     
+    @ObservedObject var goalsToDoVM = GoalToDoVM()
+
     var body: some View {
         VStack{
             HStack{
@@ -40,10 +42,13 @@ struct GoalsDashboardView: View {
                 }
             }
             .padding(.top, 5)
-            ForEach(Goals) {goal in
-                GoalCard()
+
+            ForEach(goalsToDoVM.toDoGoals) {goal in
+                GoalCard(goal: goal)
                     .padding(.vertical, 1)
             }
+            
+            Text(String(goalsToDoVM.toDoGoals.count))
         }
         .padding(.bottom, 10)
     }

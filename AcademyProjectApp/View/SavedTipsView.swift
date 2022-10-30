@@ -10,7 +10,7 @@ import SwiftUI
 struct SavedTipsView: View {
     
     
-    @ObservedObject var tipCardVM = TipCardModel()
+    @ObservedObject var tipSavedCardVM = TipCardModel()
     
     @State var searchText = ""
     
@@ -19,17 +19,17 @@ struct SavedTipsView: View {
         VStack(spacing: 0){
             
             
-            List{
-                ForEach(tipCardVM.tips){ tip in
+           
+                ForEach(tipSavedCardVM.tips){ tip in
                     TipCardView(tip: tip)
-                        .listRowSeparator(.hidden)
                 }
-            }
-            .listStyle(.plain)
+           
+       
             .searchable(text: $searchText)
             
             .navigationTitle("Saved tips")
             
+            Spacer()
             
         }
         

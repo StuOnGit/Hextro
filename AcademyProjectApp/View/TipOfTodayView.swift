@@ -33,7 +33,6 @@ struct TipOfTodayView: View {
                     .foregroundColor(.blue.opacity(0.15))
             }
             .padding(.bottom, 10)
-            Divider()
             
         }
         

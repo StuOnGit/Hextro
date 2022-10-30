@@ -17,6 +17,7 @@ struct Goal: Identifiable {
     var completed: Bool = false
     var completionDate : Date?
     var rating: RatingEnum?
+    var tips: [Tip]?
     //TODO: implement other stuff
     
 }
