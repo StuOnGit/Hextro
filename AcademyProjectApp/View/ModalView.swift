@@ -17,6 +17,9 @@ struct ModalView: View {
     
     @Binding var rootActive: Bool
     
+    var goal : Goal
+    var index : Int
+    
     
     var body: some View {
         
@@ -43,6 +46,9 @@ struct ModalView: View {
                             
                             Button ("Add", role: .destructive) {
                                 rootActive = false
+                                User.instance.toDoGoals.insert(goal, at: index)
+                                goalDB.removeAll(where: {goal == $0})
+                                print(User.instance.toDoGoals[index].title)
                             }
                             
                         }
@@ -70,7 +76,7 @@ struct ModalView: View {
 
 struct ModalView_Previews: PreviewProvider {
     static var previews: some View {
-        ModalView(rootActive: .constant(false))
+        ModalView(rootActive: .constant(false), goal: goalDB[0], index: 1)
     }
 }
 

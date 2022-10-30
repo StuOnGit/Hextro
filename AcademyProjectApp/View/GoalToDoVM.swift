@@ -11,7 +11,5 @@ import SwiftUI
 
 class GoalToDoVM : ObservableObject{
     @Published var toDoGoals = User.instance.toDoGoals
-    
-    
 }
 

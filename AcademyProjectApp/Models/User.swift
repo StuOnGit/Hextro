@@ -22,11 +22,12 @@ class User {
     private init(){
         name = ""
         toDoGoals = []
-        for _ in 1...MAX_GOALS_TO_DO {
-            toDoGoals.append(Goal(title: "", description: ""))
-        }
         savedTips = []
         completedGoals = []
+        for i in 1...MAX_GOALS_TO_DO {
+            toDoGoals.append(Goal(title: "", description: ""))
+        }
+        
     }
     
     public func addSavedTip(tip: Tip){

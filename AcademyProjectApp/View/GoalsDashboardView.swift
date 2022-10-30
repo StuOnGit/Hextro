@@ -23,6 +23,8 @@ struct GoalsDashboardView: View {
     
     @ObservedObject var goalsToDoVM = GoalToDoVM()
 
+    var index : Int = 0
+    
     var body: some View {
         VStack{
             HStack{
@@ -31,7 +33,7 @@ struct GoalsDashboardView: View {
                     .font(.system(size: 28))
                 Spacer()
                 
-                NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title), isActive: $mainActive) { EmptyView() }
+                NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title, indexButtonTochange: index), isActive: $mainActive) { EmptyView() }
                 Button{
                     mainActive = true
                     completedGoalClicked = true
@@ -43,8 +45,8 @@ struct GoalsDashboardView: View {
             }
             .padding(.top, 5)
 
-            ForEach(goalsToDoVM.toDoGoals) {goal in
-                GoalCard(goal: goal)
+            ForEach(0..<goalsToDoVM.toDoGoals.count, id: \.self) {index in
+                GoalCard(goal: goalsToDoVM.toDoGoals[index], index: index)
                     .padding(.vertical, 1)
             }
             
