@@ -2,7 +2,7 @@
 //  RatingView.swift
 //  AcademyProjectApp
 //
-//  Created by Valentina Russo on 28/10/22.
+//  Created by Valentina Russo on 30/10/22.
 //
 
 import SwiftUI
@@ -35,3 +35,4 @@ struct RatingView_Previews: PreviewProvider {
         RatingView()
     }
 }
+

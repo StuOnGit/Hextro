@@ -2,7 +2,7 @@
 //  ModalView.swift
 //  AcademyProjectApp
 //
-//  Created by Valentina Russo on 26/10/22.
+//  Created by Valentina Russo on 30/10/22.
 //
 
 import SwiftUI
@@ -73,3 +73,4 @@ struct ModalView_Previews: PreviewProvider {
         ModalView(rootActive: .constant(false))
     }
 }
+

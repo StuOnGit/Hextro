@@ -33,6 +33,8 @@
 		91DFB53329092638008B3869 /* RatingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DFB53229092638008B3869 /* RatingEnum.swift */; };
 		E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A32906C3180067AAB3 /* HighlitsView.swift */; };
 		E15911A62906C63A0067AAB3 /* TipCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A52906C63A0067AAB3 /* TipCardView.swift */; };
+		E18A5F01290F1543004257C7 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A5F00290F1543004257C7 /* ModalView.swift */; };
+		E18A5F03290F15E5004257C7 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A5F02290F15E5004257C7 /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		91DFB53229092638008B3869 /* RatingEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingEnum.swift; sourceTree = "<group>"; };
 		E15911A32906C3180067AAB3 /* HighlitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlitsView.swift; sourceTree = "<group>"; };
 		E15911A52906C63A0067AAB3 /* TipCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCardView.swift; sourceTree = "<group>"; };
+		E18A5F00290F1543004257C7 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		E18A5F02290F15E5004257C7 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +207,8 @@
 				8AB283E72909397A00AED074 /* ProfileView.swift */,
 				91B5844329096E930029504E /* GoalsView.swift */,
 				8AB283EB290985F900AED074 /* OnboardingView.swift */,
+				E18A5F00290F1543004257C7 /* ModalView.swift */,
+				E18A5F02290F15E5004257C7 /* RatingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,12 +352,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18A5F01290F1543004257C7 /* ModalView.swift in Sources */,
 				9128B62D290815C20075AC47 /* SavedTipsView.swift in Sources */,
 				9128B631290818A60075AC47 /* TipCardModel.swift in Sources */,
 				91B58442290967360029504E /* GoalsDashboardView.swift in Sources */,
 				9128B62B290810C70075AC47 /* Goal.swift in Sources */,
 				91B5844429096E930029504E /* GoalsView.swift in Sources */,
 				E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */,
+				E18A5F03290F15E5004257C7 /* RatingView.swift in Sources */,
 				91DFB53329092638008B3869 /* RatingEnum.swift in Sources */,
 				912CCF71290ACD4B009BC0D4 /* GoalToDoVM.swift in Sources */,
 				919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */,
