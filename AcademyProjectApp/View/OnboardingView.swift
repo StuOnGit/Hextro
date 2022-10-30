@@ -11,11 +11,12 @@ import PhotosUI
 struct OnboardingView: View {
     
     @AppStorage("userOnboarded") var userOnboarded: Bool = false
+    @AppStorage("userName") var userName: String = " "
+    @AppStorage("userSurname") var userSurname: String = " "
     @State private var name: String = ""
     @State private var surname: String = ""
     @State var selectedItems:[PhotosPickerItem] = []
     @State var data: Data?
-    var user1 = User.instance
 
     var body: some View {
       
@@ -70,7 +71,11 @@ struct OnboardingView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding(.trailing, 20)
                 .padding(.leading, 20)
-                Button(action: {userOnboarded = true})
+                Button(action: {
+                    userOnboarded = true
+                    userName = name
+                    userSurname = surname
+                })
                 {
                     
                     Text ("Continue")

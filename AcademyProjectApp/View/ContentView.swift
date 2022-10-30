@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
 
     @AppStorage("userOnboarded") var userOnboarded: Bool = false
-    
     var body: some View {
 
         if userOnboarded{
