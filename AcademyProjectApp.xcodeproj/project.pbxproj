@@ -35,6 +35,9 @@
 		E15911A62906C63A0067AAB3 /* TipCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15911A52906C63A0067AAB3 /* TipCardView.swift */; };
 		E18A5F01290F1543004257C7 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A5F00290F1543004257C7 /* ModalView.swift */; };
 		E18A5F03290F15E5004257C7 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A5F02290F15E5004257C7 /* RatingView.swift */; };
+		E18A5F1F290FE17C004257C7 /* ModalEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A5F1E290FE17C004257C7 /* ModalEditView.swift */; };
+		E18A5F21291002DF004257C7 /* GoalCompletedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A5F20291002DF004257C7 /* GoalCompletedVM.swift */; };
+		E18A5F232910059C004257C7 /* CompletedGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A5F222910059C004257C7 /* CompletedGoalsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		E15911A52906C63A0067AAB3 /* TipCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCardView.swift; sourceTree = "<group>"; };
 		E18A5F00290F1543004257C7 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		E18A5F02290F15E5004257C7 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		E18A5F1E290FE17C004257C7 /* ModalEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalEditView.swift; sourceTree = "<group>"; };
+		E18A5F20291002DF004257C7 /* GoalCompletedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCompletedVM.swift; sourceTree = "<group>"; };
+		E18A5F222910059C004257C7 /* CompletedGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedGoalsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,8 @@
 				8AB283EB290985F900AED074 /* OnboardingView.swift */,
 				E18A5F00290F1543004257C7 /* ModalView.swift */,
 				E18A5F02290F15E5004257C7 /* RatingView.swift */,
+				E18A5F1E290FE17C004257C7 /* ModalEditView.swift */,
+				E18A5F222910059C004257C7 /* CompletedGoalsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 			children = (
 				9128B630290818A60075AC47 /* TipCardModel.swift */,
 				912CCF70290ACD4B009BC0D4 /* GoalToDoVM.swift */,
+				E18A5F20291002DF004257C7 /* GoalCompletedVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -356,11 +365,14 @@
 				9128B62D290815C20075AC47 /* SavedTipsView.swift in Sources */,
 				9128B631290818A60075AC47 /* TipCardModel.swift in Sources */,
 				91B58442290967360029504E /* GoalsDashboardView.swift in Sources */,
+				E18A5F1F290FE17C004257C7 /* ModalEditView.swift in Sources */,
 				9128B62B290810C70075AC47 /* Goal.swift in Sources */,
 				91B5844429096E930029504E /* GoalsView.swift in Sources */,
+				E18A5F232910059C004257C7 /* CompletedGoalsView.swift in Sources */,
 				E15911A42906C3180067AAB3 /* HighlitsView.swift in Sources */,
 				E18A5F03290F15E5004257C7 /* RatingView.swift in Sources */,
 				91DFB53329092638008B3869 /* RatingEnum.swift in Sources */,
+				E18A5F21291002DF004257C7 /* GoalCompletedVM.swift in Sources */,
 				912CCF71290ACD4B009BC0D4 /* GoalToDoVM.swift in Sources */,
 				919F949229081EFD00F0BC83 /* TipOfTodayView.swift in Sources */,
 				91DFB52D29085B8B008B3869 /* GoalDB.swift in Sources */,

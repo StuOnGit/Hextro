@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ModalView: View {
     
-    //@Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) var dismiss
     @State private var cancelClicked = false
     @State private var showingAlert = false
@@ -20,7 +19,7 @@ struct ModalView: View {
     var goal : Goal
     var index : Int
     
-    @ObservedObject var goalsToDoVM : GoalToDoVM
+    @ObservedObject var goalToDoVM : GoalToDoVM
     
     var body: some View {
         
@@ -47,7 +46,7 @@ struct ModalView: View {
                             
                             Button ("Add", role: .destructive) {
                                 rootActive = false
-                                goalsToDoVM.insert(toDoGoal: goal, index: index)
+                                goalToDoVM.insert(toDoGoal: goal, index: index)
                                 goalDB.removeAll(where: {goal == $0})
                                 print(User.instance.toDoGoals[index].title)
                             }
@@ -55,12 +54,12 @@ struct ModalView: View {
                         }
                     }
                     
-                    Text("TITLE")
+                    Text(goal.title)
                         .fontWeight(.bold)
                         .font(.system(size: 28))
                         .padding(.top, 30)
                     
-                    Text("DESCRIPTION")
+                    Text(goal.description)
                     
                     Spacer()
                 }
@@ -77,7 +76,7 @@ struct ModalView: View {
 
 struct ModalView_Previews: PreviewProvider {
     static var previews: some View {
-        ModalView(rootActive: .constant(false), goal: goalDB[0], index: 1, goalsToDoVM: GoalToDoVM())
+        ModalView(rootActive: .constant(false), goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
     }
 }
 
