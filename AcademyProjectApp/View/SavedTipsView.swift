@@ -19,8 +19,8 @@ struct SavedTipsView: View {
         VStack(spacing: 0){
             
             
-           
-                ForEach(tipSavedCardVM.tips){ tip in
+                
+            ForEach(User.instance.savedTips){ tip in
                     TipCardView(tip: tip)
                 }
            

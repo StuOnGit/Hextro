@@ -9,9 +9,9 @@ import Foundation
 
 
 enum RatingEnum : String, CaseIterable{
-    case Bad = "Bad"
-    case Poor = "Poor"
-    case Average = "Average"
-    case Good = "Good"
-    case Happy = "Happy"
+    case Bad = "bad"
+    case Poor = "poor"
+    case Average = "average"
+    case Good = "good"
+    case Happy = "happy"
 }

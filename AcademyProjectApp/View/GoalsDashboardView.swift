@@ -21,7 +21,7 @@ struct GoalsDashboardView: View {
     @State var addGoalIsClicked = false
     @State var title: String = ""
     
-    @ObservedObject var goalsToDoVM = GoalToDoVM()
+    @StateObject var goalsToDoVM = GoalToDoVM()
 
     var index : Int = 0
     
@@ -33,7 +33,7 @@ struct GoalsDashboardView: View {
                     .font(.system(size: 28))
                 Spacer()
                 
-                NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title, indexButtonTochange: index), isActive: $mainActive) { EmptyView() }
+//                NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title, indexButtonTochange: index), isActive: $mainActive) { EmptyView() }
                 Button{
                     mainActive = true
                     completedGoalClicked = true
@@ -46,7 +46,7 @@ struct GoalsDashboardView: View {
             .padding(.top, 5)
 
             ForEach(0..<goalsToDoVM.toDoGoals.count, id: \.self) {index in
-                GoalCard(goal: goalsToDoVM.toDoGoals[index], index: index)
+                GoalCard(goal: goalsToDoVM.toDoGoals[index], index: index, goalsToDoVM : goalsToDoVM)
                     .padding(.vertical, 1)
             }
             

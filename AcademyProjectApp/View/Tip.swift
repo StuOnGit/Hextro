@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Tip : Identifiable {
+struct Tip : Identifiable, Equatable {
+    
+    static func == (lhs: Tip, rhs: Tip) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id = UUID()
     
     var title : String

@@ -10,10 +10,12 @@ import SwiftUI
 struct TipCardView: View {
     
     var tip : Tip
-    @State private var isClicked = false
+    @State private var isClicked : Bool = false
+    @ObservedObject var tipsSavedCardVM = TipCardModel()
     
     
     var body: some View {
+        
         ZStack{
             VStack(alignment: .leading, spacing: 15){
                 
@@ -25,13 +27,19 @@ struct TipCardView: View {
                     
                     Spacer()
                     
+                    
+                    
                     Button(action: {
-                        self.isClicked.toggle()}) {
-                        Image(systemName: self.isClicked == true ? "heart.fill" : "heart")
+                        self.isClicked.toggle()
+                    }) {
+                            
+                        Image(systemName: self.isClicked || tipsSavedCardVM.tips.contains(where: {tip == $0}) ? "heart.fill"
+                            : "heart")
                     }
                     .foregroundColor(Color.white)
                     .font(.system(size: 28))
                     
+                   
                     
                     .alignmentGuide(.firstTextBaseline) { context in
                         context[.bottom] - 0.2 * context.height

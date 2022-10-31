@@ -16,11 +16,13 @@ struct GoalCard: View {
     
     var goal : Goal
     var index: Int
+    @ObservedObject var goalsToDoVM : GoalToDoVM
+    
     
     var body: some View {
         
         VStack{
-            NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title, indexButtonTochange: index), isActive: $mainActive) {EmptyView()}
+            NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title,  goalsToDoVM: goalsToDoVM, indexButtonTochange: index), isActive: $mainActive) {EmptyView()}
             
             
             //if goal == nil -> button else goal button
@@ -44,7 +46,7 @@ struct GoalCard: View {
                 }
             }else{
                 Button() {} label: {
-                    Label(goal.title + "\n" + goal.description, systemImage: "")
+                    Label(goal.title, systemImage: "")
                         .frame(maxWidth: .infinity)
                         .foregroundColor(Color.blue)
                 }
@@ -62,6 +64,6 @@ struct GoalCard: View {
 
 struct GoalCard_Previews: PreviewProvider {
     static var previews: some View {
-        GoalCard(goal: goalDB[0], index: 1)
+        GoalCard(goal: goalDB[0], index: 1, goalsToDoVM: GoalToDoVM())
     }
 }

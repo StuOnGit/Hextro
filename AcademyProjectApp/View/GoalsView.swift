@@ -16,6 +16,7 @@ struct GoalsView: View {
     @Binding var addGoalIsClicked: Bool
     @State var title: String
 
+    @ObservedObject var goalsToDoVM : GoalToDoVM
     
     var indexButtonTochange: Int
     
@@ -41,7 +42,7 @@ struct GoalsView: View {
                     }
                     .padding()
                     .fullScreenCover(isPresented: $showSheet) {
-                        ModalView(rootActive: $rootActive, goal: goal, index: indexButtonTochange)
+                        ModalView(rootActive: $rootActive, goal: goal, index: indexButtonTochange, goalsToDoVM: goalsToDoVM)
                     }
                     .background {
                         RoundedRectangle(cornerRadius: 10)
@@ -60,7 +61,8 @@ struct GoalsView: View {
 struct GoalsView_Previews: PreviewProvider {
     static var previews: some View {
         
-        GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false), title: "", indexButtonTochange: 1)
+        GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false), title: "",
+            goalsToDoVM: GoalToDoVM() ,indexButtonTochange: 1)
     }
     
 }
