@@ -20,15 +20,14 @@ struct SettingsView: View {
                         .listStyle(.inset)
                     
                 }
-          
+                .preferredColorScheme(isDarkMode ? .dark : .light)
 
             }
             
           
 
           
-            ContentView()
-           .preferredColorScheme(isDarkMode ? .dark : .light)
+    
         }
         .navigationTitle("Settings")
 
