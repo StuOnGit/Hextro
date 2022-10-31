@@ -14,9 +14,8 @@ struct GoalsView: View {
     @State private var showSheet = false
     @Binding var completedGoalClicked: Bool
     @Binding var addGoalIsClicked: Bool
-    @State var title: String
 
-    @ObservedObject var goalsToDoVM : GoalToDoVM
+    @ObservedObject var goalToDoVM : GoalToDoVM
     
     var indexButtonTochange: Int
     
@@ -25,7 +24,7 @@ struct GoalsView: View {
         ScrollView {
             VStack(){
                 HStack{
-                    Text("\(title)goals")
+                    Text("Add goals")
                         .fontWeight(.bold)
                         .font(.system(size: 28))
                     Spacer()
@@ -42,7 +41,7 @@ struct GoalsView: View {
                     }
                     .padding()
                     .fullScreenCover(isPresented: $showSheet) {
-                        ModalView(rootActive: $rootActive, goal: goal, index: indexButtonTochange, goalsToDoVM: goalsToDoVM)
+                        ModalView(rootActive: $rootActive, goal: goal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
                     }
                     .background {
                         RoundedRectangle(cornerRadius: 10)
@@ -61,8 +60,8 @@ struct GoalsView: View {
 struct GoalsView_Previews: PreviewProvider {
     static var previews: some View {
         
-        GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false), title: "",
-            goalsToDoVM: GoalToDoVM() ,indexButtonTochange: 1)
+        GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false),
+            goalToDoVM: GoalToDoVM() ,indexButtonTochange: 1)
     }
     
 }

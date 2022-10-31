@@ -12,26 +12,25 @@ struct GoalCard: View {
     @State private var mainActive = false
     @State var addGoalIsClicked = false
     @State private var completedGoalClicked = false
-    @State var title: String = ""
+    @State var editClicked = false
+    @State private var showSheet = false
     
     var goal : Goal
     var index: Int
-    @ObservedObject var goalsToDoVM : GoalToDoVM
+    @ObservedObject var goalToDoVM : GoalToDoVM
     
     
     var body: some View {
         
         VStack{
-            NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title,  goalsToDoVM: goalsToDoVM, indexButtonTochange: index), isActive: $mainActive) {EmptyView()}
+            NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, goalToDoVM: goalToDoVM, indexButtonTochange: index), isActive: $mainActive) {EmptyView()}
             
             
-            //if goal == nil -> button else goal button
             
             if (goal.title == "") {
                 Button() {
                     mainActive = true
                     addGoalIsClicked = true
-                    title = "Add "
                 }label: {
                     Label("Add new Goal", systemImage: "plus")
                         .frame(maxWidth: .infinity)
@@ -45,10 +44,16 @@ struct GoalCard: View {
                         .foregroundColor(.gray.opacity(0.15))
                 }
             }else{
-                Button() {} label: {
+                Button() {
+                    editClicked = true
+                    showSheet.toggle()
+                } label: {
                     Label(goal.title, systemImage: "")
                         .frame(maxWidth: .infinity)
                         .foregroundColor(Color.blue)
+                }
+                .fullScreenCover(isPresented: $showSheet) {
+                    ModalEditView(goal: goal, goalToDoVM : goalToDoVM, index: index)
                 }
                 .padding()
                 .background {
@@ -64,6 +69,6 @@ struct GoalCard: View {
 
 struct GoalCard_Previews: PreviewProvider {
     static var previews: some View {
-        GoalCard(goal: goalDB[0], index: 1, goalsToDoVM: GoalToDoVM())
+        GoalCard(goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
     }
 }

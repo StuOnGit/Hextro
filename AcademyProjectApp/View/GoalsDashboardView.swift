@@ -21,7 +21,7 @@ struct GoalsDashboardView: View {
     @State var addGoalIsClicked = false
     @State var title: String = ""
     
-    @StateObject var goalsToDoVM = GoalToDoVM()
+    @StateObject var goalToDoVM = GoalToDoVM()
 
     var index : Int = 0
     
@@ -37,7 +37,6 @@ struct GoalsDashboardView: View {
                 Button{
                     mainActive = true
                     completedGoalClicked = true
-                    title = "Completed "
                 } label: {
                     Label(" ", systemImage: "medal")
                         .font(.system(size: 20))
@@ -45,12 +44,11 @@ struct GoalsDashboardView: View {
             }
             .padding(.top, 5)
 
-            ForEach(0..<goalsToDoVM.toDoGoals.count, id: \.self) {index in
-                GoalCard(goal: goalsToDoVM.toDoGoals[index], index: index, goalsToDoVM : goalsToDoVM)
+            ForEach(0..<goalToDoVM.toDoGoals.count, id: \.self) {index in
+                GoalCard(goal: goalToDoVM.toDoGoals[index], index: index, goalToDoVM : goalToDoVM)
                     .padding(.vertical, 1)
             }
             
-            Text(String(goalsToDoVM.toDoGoals.count))
         }
         .padding(.bottom, 10)
     }
