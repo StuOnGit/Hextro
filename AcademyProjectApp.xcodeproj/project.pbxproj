@@ -219,7 +219,7 @@
 				9128B630290818A60075AC47 /* TipCardModel.swift */,
 				912CCF70290ACD4B009BC0D4 /* GoalToDoVM.swift */,
 			);
-			path = ViewModel;
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
