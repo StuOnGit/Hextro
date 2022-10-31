@@ -14,6 +14,8 @@ struct GoalCard: View {
     @State private var completedGoalClicked = false
     @State var editClicked = false
     @State private var showSheet = false
+    @Environment(\.colorScheme) var colorScheme
+
     
     var goal : Goal
     var index: Int
@@ -41,7 +43,7 @@ struct GoalCard: View {
                 .background {
                     RoundedRectangle(cornerRadius: 10)
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(.gray.opacity(0.15))
+                        .foregroundColor(colorScheme == .light ? Color(red: 0.9490196078431372, green: 0.9450980392156862, blue: 0.9647058823529412) : Color(red: 0.08627450980392157, green: 0.08627450980392157, blue: 0.09411764705882353))
                 }
             }else{
                 Button() {
@@ -59,7 +61,7 @@ struct GoalCard: View {
                 .background {
                     RoundedRectangle(cornerRadius: 10)
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(.gray.opacity(0.15))
+                        .foregroundColor(Color(red: 0.9490196078431372, green: 0.9450980392156862, blue: 0.9647058823529412))
                 }
             }
             
@@ -69,6 +71,12 @@ struct GoalCard: View {
 
 struct GoalCard_Previews: PreviewProvider {
     static var previews: some View {
-        GoalCard(goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
+        Group {
+            GoalCard(goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
+                .preferredColorScheme(.light)
+            GoalCard(goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
+                .preferredColorScheme(.dark)
+        }
+      
     }
 }
