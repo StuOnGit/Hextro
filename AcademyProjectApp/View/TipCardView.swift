@@ -10,8 +10,8 @@ import SwiftUI
 struct TipCardView: View {
     
     var tip : Tip
-    @State private var isClicked : Bool = false
-    @ObservedObject var tipsSavedCardVM = TipCardModel()
+   // @State private var isClicked : Bool = false
+    @ObservedObject var tipCardModel : TipCardModel
     
     
     var body: some View {
@@ -30,10 +30,14 @@ struct TipCardView: View {
                     
                     
                     Button(action: {
-                        self.isClicked.toggle()
+                        if(tipCardModel.savedTips.contains(where: {tip == $0})){
+                            tipCardModel.remove(savedTip: tip)
+                        }else{
+                            tipCardModel.insert(savedTip: tip)
+                        }
                     }) {
                             
-                        Image(systemName: self.isClicked || tipsSavedCardVM.tips.contains(where: {tip == $0}) ? "heart.fill"
+                        Image(systemName:  tipCardModel.savedTips.contains(where: {tip == $0}) ? "heart.fill"
                             : "heart")
                     }
                     .foregroundColor(Color.white)
@@ -62,6 +66,6 @@ struct TipCardView: View {
 
 struct TipCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TipCardView(tip: tipsDB[0])
+        TipCardView(tip: tipsDB[0], tipCardModel: TipCardModel())
     }
 }

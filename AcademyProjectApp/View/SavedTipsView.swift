@@ -10,7 +10,7 @@ import SwiftUI
 struct SavedTipsView: View {
     
     
-    @ObservedObject var tipSavedCardVM = TipCardModel()
+    @ObservedObject var tipCardModel : TipCardModel
     
     @State var searchText = ""
     
@@ -20,8 +20,8 @@ struct SavedTipsView: View {
             
             
                 
-            ForEach(User.instance.savedTips){ tip in
-                    TipCardView(tip: tip)
+            ForEach(tipCardModel.savedTips){ tip in
+                    TipCardView(tip: tip, tipCardModel: tipCardModel)
                 }
            
        
@@ -39,6 +39,6 @@ struct SavedTipsView: View {
 
 struct SavedTipsView_Previews: PreviewProvider {
     static var previews: some View {
-        SavedTipsView()
+        SavedTipsView(tipCardModel: TipCardModel())
     }
 }
