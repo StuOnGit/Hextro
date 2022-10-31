@@ -10,49 +10,65 @@ import SwiftUI
 struct ProfileView: View {
     @AppStorage("userName") var userName: String = " "
     @AppStorage("userSurname") var userSurname: String = " "
-    @AppStorage("userAvatar") var userAvatar: Data?
-    @Environment(\.colorScheme) var colorScheme
 
-   
-    
     var body: some View {
         NavigationView() {
             ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(LinearGradient(colors: [Color.green], startPoint: .top, endPoint: .bottom))
+                            .frame(width: .infinity, height: 245)
+                            .shadow(radius: 4)
                 
-                
-                VStack (alignment: .center, spacing: 0){
-                    if let data = userAvatar, let uiimage = UIImage(data: data) {
-                        Image(uiImage: uiimage)
+                        VStack{
+                            Image("franco-image")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 120, height: 180)
+                                .shadow(radius: 5)
+                                .cornerRadius(20)
+                            
+                            Text(userName)
+                                .fixedSize()
+                                .font(.title3.weight(.bold))
+                                .foregroundColor(.black)
+                            Text(userSurname)
+                                .font(.subheadline)
+                                .foregroundColor(.black)
+                                .lineLimit(2)
+                        }
+                    }
+                VStack(){
+                    HStack (alignment: .center){
+                        VStack (alignment: .leading){
+                            Text("\(userName) \(userSurname)")
+                                .padding(.top, 5)
+                                .font(.system(size: 30))
+                                .padding(.bottom, 5)
+                            
+                        }
+                        
+                        Spacer()
+                        Image("franco-image")
                             .resizable()
-                            .scaledToFill()
-                            .frame(width: 200, height: 200)
-                            .clipShape(Circle())
-                            .padding(.top, 40)
+                            .frame(width: 100, height: 100)
+                        
+                        
                     }
-                    HStack(){
-                        Text("\(userName) \(userSurname)")
-                        
-                            .fixedSize()
-                            .font(.system(size: 40).bold())
-                            .foregroundColor(colorScheme == .dark ? .white : .black)
-                            .padding(.top, 30)
-                        
-                        
-                            .padding(.bottom, 150)
-                    }
+                    
+                    .padding()
+                    Divider()
+                    Spacer()
+                    
                 }
-                
             }
-           
-            
-        }
         .navigationTitle("Profile")
-    }
-    
-    struct ProfileView_Previews: PreviewProvider {
-        static var previews: some View {
-            ProfileView()
-        
         }
+     
+    }
+
+
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
     }
 }

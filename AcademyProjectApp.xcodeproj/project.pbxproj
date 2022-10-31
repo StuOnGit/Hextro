@@ -228,7 +228,7 @@
 				912CCF70290ACD4B009BC0D4 /* GoalToDoVM.swift */,
 				E18A5F20291002DF004257C7 /* GoalCompletedVM.swift */,
 			);
-			name = ViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

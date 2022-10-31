@@ -10,9 +10,6 @@ import SwiftUI
 struct ContentView: View {
 
     @AppStorage("userOnboarded") var userOnboarded: Bool = false
-    //@AppStorage("systemMode") var systemMode
-    @Environment(\.colorScheme) var colorScheme
-    
     var body: some View {
 
         if userOnboarded{
@@ -36,7 +33,7 @@ struct ContentView: View {
                             NavigationLink(destination: SettingsView()) {
                                 Image(systemName: "gearshape")
                                     .font(.system(size: 20))
-                                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                                    .foregroundColor(.black)
                                 
                             }
                         }
@@ -44,7 +41,7 @@ struct ContentView: View {
                             NavigationLink(destination: ProfileView()) {
                                 Image(systemName: "person.circle")
                                     .font(.system(size: 22))
-                                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                                    .foregroundColor(.black)
                                 
                             }
                         }
@@ -64,14 +61,7 @@ struct ContentView: View {
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            Group{
-                ContentView()
-                    .preferredColorScheme(.light)
-                ContentView()
-                    .preferredColorScheme(.dark)
-               
-            }
-            
+            ContentView()
         }
     }
 }
