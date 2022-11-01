@@ -15,4 +15,4 @@ Tip(title: "title3", icon: "heart", description: "description3")
 
 ]
 
-var tipExample1 = Tip(title: "Today's tip", icon: "heart.circle", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet justo donec enim diam vulputate.")
+var tipExample1 = Tip(title: "Today's tip:" + "\nChat", icon: "heart.circle", description: "Have an extra chat with the baker, neighbor and the person you meet at the traffic lights")

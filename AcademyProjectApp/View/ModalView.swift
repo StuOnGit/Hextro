@@ -16,7 +16,7 @@ struct ModalView: View {
     
     @Binding var rootActive: Bool
     
-    var goal : Goal
+    @Binding var goal : Goal
     var index : Int
     
     @ObservedObject var goalToDoVM : GoalToDoVM
@@ -38,6 +38,7 @@ struct ModalView: View {
                         Spacer()
                         
                         Button {
+                            
                             showingAlert = true
                         }label: {
                             Label("Add", systemImage: "")
@@ -48,7 +49,6 @@ struct ModalView: View {
                                 rootActive = false
                                 goalToDoVM.insert(toDoGoal: goal, index: index)
                                 goalDB.removeAll(where: {goal == $0})
-                                print(User.instance.toDoGoals[index].title)
                             }
                             
                         }
@@ -76,7 +76,7 @@ struct ModalView: View {
 
 struct ModalView_Previews: PreviewProvider {
     static var previews: some View {
-        ModalView(rootActive: .constant(false), goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
+        ModalView(rootActive: .constant(false), goal: .constant(Goal(title: "", description: "")), index: 1, goalToDoVM: GoalToDoVM())
     }
 }
 

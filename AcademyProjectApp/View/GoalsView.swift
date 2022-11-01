@@ -16,7 +16,7 @@ struct GoalsView: View {
     @Binding var addGoalIsClicked: Bool
 
     @ObservedObject var goalToDoVM : GoalToDoVM
-    
+    @State private var selectedGoal : Goal = Goal(title: "", description: "")
     var indexButtonTochange: Int
     
     var body: some View {
@@ -33,21 +33,22 @@ struct GoalsView: View {
                 
                 ForEach(goalDB) {goal in
                     Button() {
-                        showSheet.toggle()
+                        selectedGoal = goal
+                        showSheet = true
                     }label: {
-                        Label(goal.title, systemImage: "")
+                        Label(goal.title, systemImage: " ")
                             .frame(maxWidth: .infinity)
                             .foregroundColor(.black)
                     }
                     .padding()
                     .fullScreenCover(isPresented: $showSheet) {
-                        ModalView(rootActive: $rootActive, goal: goal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
+                        ModalView(rootActive: $rootActive, goal: $selectedGoal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
                     }
                     .background {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(maxWidth: .infinity)
                             .foregroundColor(.white)
-                }
+                    }
                 }
                 .padding(4)
                 
