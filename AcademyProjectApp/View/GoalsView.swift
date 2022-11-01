@@ -60,15 +60,13 @@ struct GoalsView: View {
                     }
                 
                 .padding()
-                
             }
-           
-            
         }
         .navigationTitle("Add goals")
        
         
        
+
      
               
             }

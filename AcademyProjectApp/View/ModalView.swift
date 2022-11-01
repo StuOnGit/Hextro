@@ -12,7 +12,6 @@ struct ModalView: View {
     @Environment(\.dismiss) var dismiss
     @State private var cancelClicked = false
     @State private var showingAlert = false
-    //@State private var alertClicked = false
     
     @Binding var rootActive: Bool
     @Environment(\.colorScheme) var colorScheme
@@ -48,9 +47,10 @@ struct ModalView: View {
                         }
                         .alert("Are you sure you want to add this goal?", isPresented: $showingAlert) {
                             Button ("Add", role: .destructive) {
+                                dismiss()
                                 rootActive = false
-                                goalToDoVM.insert(toDoGoal: goal, index: index)
                                 goalDB.removeAll(where: {goal == $0})
+                                goalToDoVM.insert(toDoGoal: goal, index: index)
                             }
                             
                         }

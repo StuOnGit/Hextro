@@ -9,10 +9,10 @@ import Foundation
 
 
 var tipsDB : [Tip] = [
-Tip(title: "title", icon: "heart", description: "description"),
+Tip(title: "Today's Tip", icon: "heart", description: "Join some events or activities your city has to offer. It will be easier to encounter new people and start a conversation"),
 Tip(title: "title2", icon: "heart", description: "description2"),
 Tip(title: "title3", icon: "heart", description: "description3")
 
 ]
 
-var tipExample1 = Tip(title: "Today's tip:" + "\nChat", icon: "heart.circle", description: "Have an extra chat with the baker, neighbor and the person you meet at the traffic lights")
+var tipExample1 = Tip(title: "Today's tip", icon: "heart.circle", description: "Join some events or activities your city has to offer. It will be easier to encounter new people and start a conversation")

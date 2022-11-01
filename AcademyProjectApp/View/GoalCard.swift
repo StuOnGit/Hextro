@@ -20,6 +20,7 @@ struct GoalCard: View {
     @Binding var goal : Goal
     var index: Int
     @ObservedObject var goalToDoVM : GoalToDoVM
+    @ObservedObject var completedGoalVM : GoalCompletedVM
     
     
     var body: some View {
@@ -42,8 +43,13 @@ struct GoalCard: View {
                 .padding()
                 .background {
                     RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray.opacity(0.15), lineWidth: 2)
                         .frame(maxWidth: .infinity)
+
                         .foregroundColor(colorScheme == .light ? Color(red: 0.9490196078431372, green: 0.9450980392156862, blue: 0.9647058823529412) : Color(red: 0.08627450980392157, green: 0.08627450980392157, blue: 0.09411764705882353))
+
+                        //.foregroundColor(.gray.opacity(0.15))
+
                 }
             }else{
                 Button() {
@@ -55,13 +61,18 @@ struct GoalCard: View {
                         .foregroundColor(Color.blue)
                 }
                 .fullScreenCover(isPresented: $showSheet) {
-                    ModalEditView(goal: $goal, goalToDoVM : goalToDoVM, index: index)
+
+                    ModalEditView(completedGoalVM: completedGoalVM, goal: $goal, goalToDoVM : goalToDoVM, index: index)
+
                 }
                 .padding()
                 .background {
                     RoundedRectangle(cornerRadius: 10)
                         .frame(maxWidth: .infinity)
                         .foregroundColor(Color(red: 0.9490196078431372, green: 0.9450980392156862, blue: 0.9647058823529412))
+
+                     //   .foregroundColor(.blue.opacity(0.15))
+
                 }
             }
             
@@ -71,12 +82,15 @@ struct GoalCard: View {
 
 struct GoalCard_Previews: PreviewProvider {
     static var previews: some View {
+
         Group {
-            GoalCard(goal: .constant(Goal(title: "", description: "")), index: 1, goalToDoVM: GoalToDoVM())
+            GoalCard(goal: .constant(Goal(title: "", description: "")), index: 1, goalToDoVM: GoalToDoVM(), completedGoalVM: GoalCompletedVM())
                 .preferredColorScheme(.light)
-            GoalCard(goal: .constant(Goal(title: "", description: "")), index: 1, goalToDoVM: GoalToDoVM())
+            GoalCard(goal: .constant(Goal(title: "", description: "")), index: 1, goalToDoVM: GoalToDoVM(), completedGoalVM: GoalCompletedVM())
                 .preferredColorScheme(.dark)
         }
       
+
+
     }
 }

@@ -11,12 +11,14 @@ struct RatingView: View {
     
     @Environment(\.dismiss) var dismiss
     @State private var showingAlert = false
-    @ObservedObject var completedGoalsVM : GoalCompletedVM
+
+    @ObservedObject var completedGoalVM : GoalCompletedVM
     @Binding var goal : Goal
+
     @ObservedObject var goalToDoVM : GoalToDoVM
     var index : Int
     
-    @State private var selectedItem : RatingEnum = RatingEnum.Poor
+    @State private var selectedItem : RatingEnum = RatingEnum.Average
     
     
     var body: some View {
@@ -36,9 +38,9 @@ struct RatingView: View {
                     Button ("Yes", role: .destructive) {
                         goal.rating = selectedItem
                         print(goal.rating!.rawValue)
-                        completedGoalsVM.addCompletedGoal(completedGoal: goal)
+                        completedGoalVM.addCompletedGoal(completedGoal: goal)
+
                         goalToDoVM.remove(toDoGoal: goal, index: index)
-                        dismiss()
                     }
                     
                 }
@@ -54,7 +56,9 @@ struct RatingView: View {
 
 struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
-        RatingView(completedGoalsVM: GoalCompletedVM(), goal: .constant(Goal(title: "", description: "")), goalToDoVM: GoalToDoVM(), index: 1)
+
+        RatingView(completedGoalVM: GoalCompletedVM(), goal: .constant(Goal(title: "", description: "")), goalToDoVM: GoalToDoVM(), index: 1)
+
     }
 }
 
