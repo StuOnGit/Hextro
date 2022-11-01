@@ -11,8 +11,8 @@ struct RatingView: View {
     
     @Environment(\.dismiss) var dismiss
     @State private var showingAlert = false
-    @ObservedObject var completedGoalsVM : GoalCompletedVM
-    var goal : Goal
+    @ObservedObject var completedGoalVM : GoalCompletedVM
+    @State var goal : Goal
     @ObservedObject var goalToDoVM : GoalToDoVM
     var index : Int
     
@@ -30,9 +30,9 @@ struct RatingView: View {
                 }
                 .alert("Do you want to save this rating?", isPresented: $showingAlert) {
                     Button ("Yes", role: .destructive) {
-                        completedGoalsVM.addCompletedGoal(completedGoal: goal)
+                        goal.rating = item
+                        completedGoalVM.addCompletedGoal(completedGoal: goal)
                         goalToDoVM.remove(toDoGoal: goal, index: index)
-                        dismiss()
                     }
                     
                 }
@@ -48,7 +48,7 @@ struct RatingView: View {
 
 struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
-        RatingView(completedGoalsVM: GoalCompletedVM(), goal: goalDB[0], goalToDoVM: GoalToDoVM(), index: 1)
+        RatingView(completedGoalVM: GoalCompletedVM(), goal: goalDB[0], goalToDoVM: GoalToDoVM(), index: 1)
     }
 }
 

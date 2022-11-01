@@ -47,12 +47,13 @@ struct GoalsView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(maxWidth: .infinity)
                             .foregroundColor(.white)
+                            .padding(.horizontal)
                 }
                 }
                 .padding(4)
                 
             }
-        }.background(Color.gray.opacity(0.15))
+        }.background(Color.gray.opacity(0.10))
      
     }
 }

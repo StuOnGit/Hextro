@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CompletedGoalsView: View {
     
-    @StateObject var completedGoalsVM = GoalCompletedVM()
+    @ObservedObject var completedGoalsVM : GoalCompletedVM
     
     var body: some View {
         
@@ -23,29 +23,63 @@ struct CompletedGoalsView: View {
                 }
                 .padding()
                 
-                //ForEach(completedGoals) {goal in
+   // ----- test preview
+                Button() {
+                }label: {
+                    Text("This is a test test test test with other test text")
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.black)
+                        .padding(.horizontal)
+
+                    Image("bad")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 30, height: 30)
+                        .padding(.horizontal)
+                }
+                .padding()
+                .background {
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(maxWidth: .infinity)
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                }
+    // ------ end test preview
+                
+                ForEach(completedGoalsVM.completedGoals) {goal in
                     Button() {
                     }label: {
-                        //Label(goal.title, systemImage: "")
-                        Label("This is a test", systemImage: "")
-                            .frame(maxWidth: .infinity)
+                        Text(goal.title)
+                            .multilineTextAlignment(.leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                             .foregroundColor(.black)
+                            .padding(.horizontal)
+//                        Label(goal.title, systemImage: "")
+//                            .frame(maxWidth: .infinity, alignment: .leading)
+//                            .foregroundColor(.black)
+                        Image("\(goal.rating.rawValue)")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 30, height: 30)
+                            .padding(.horizontal)
                     }
                     .padding()
                     .background {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(maxWidth: .infinity)
                             .foregroundColor(.white)
+                            .padding(.horizontal)
                     }
-                //}
-                //.padding(4)
+                }
+                .padding(4)
             }
-        }.background(Color.gray.opacity(0.15))
+        }.background(Color.gray.opacity(0.10))
     }
     }
 
 struct CompletedGoalsView_Previews: PreviewProvider {
     static var previews: some View {
-        CompletedGoalsView()
+        CompletedGoalsView(completedGoalsVM: GoalCompletedVM())
     }
 }

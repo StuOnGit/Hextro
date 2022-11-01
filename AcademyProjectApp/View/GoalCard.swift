@@ -18,6 +18,7 @@ struct GoalCard: View {
     var goal : Goal
     var index: Int
     @ObservedObject var goalToDoVM : GoalToDoVM
+    @ObservedObject var completedGoalVM : GoalCompletedVM
     
     
     var body: some View {
@@ -40,8 +41,9 @@ struct GoalCard: View {
                 .padding()
                 .background {
                     RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray.opacity(0.15), lineWidth: 2)
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(.gray.opacity(0.15))
+                        //.foregroundColor(.gray.opacity(0.15))
                 }
             }else{
                 Button() {
@@ -53,13 +55,13 @@ struct GoalCard: View {
                         .foregroundColor(Color.blue)
                 }
                 .fullScreenCover(isPresented: $showSheet) {
-                    ModalEditView(goal: goal, goalToDoVM : goalToDoVM, index: index)
+                    ModalEditView(completedGoalVM: completedGoalVM, goal: goal, goalToDoVM : goalToDoVM, index: index)
                 }
                 .padding()
                 .background {
                     RoundedRectangle(cornerRadius: 10)
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(.gray.opacity(0.15))
+                        .foregroundColor(.blue.opacity(0.15))
                 }
             }
             
@@ -69,6 +71,6 @@ struct GoalCard: View {
 
 struct GoalCard_Previews: PreviewProvider {
     static var previews: some View {
-        GoalCard(goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
+        GoalCard(goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM(), completedGoalVM: GoalCompletedVM())
     }
 }

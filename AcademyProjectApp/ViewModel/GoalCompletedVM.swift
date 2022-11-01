@@ -18,8 +18,4 @@ class GoalCompletedVM : ObservableObject{
         completedGoals.append(completedGoal)
     }
     
-//    func addCompleted(completedGoals: Goal){
-//        completedGoals.insert(completedGoals: goal, at: completedGoals.endIndex)
-//    }
-    
 }

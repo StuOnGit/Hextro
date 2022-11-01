@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ModalEditView: View {
     
-    @StateObject var completedGoalsVM = GoalCompletedVM()
+    @ObservedObject var completedGoalVM : GoalCompletedVM
     @State private var cancelClicked = false
     @Environment(\.dismiss) var dismiss
     
@@ -29,15 +29,8 @@ struct ModalEditView: View {
                         Label("Cancel", systemImage: "")
                     }
                     
-                    
                     Spacer()
                     
-//                    Button {
-//                        dismiss()
-//                        completedGoals.append(completedGoals: goal)
-//                    }label: {
-//                        Label("Save", systemImage: "")
-//                    }
                 }
                 
                 Text(goal.title)
@@ -46,12 +39,14 @@ struct ModalEditView: View {
                     .padding(.top, 30)
                 
                 Text(goal.description)
+                    .padding()
                 Spacer()
-                
+                Divider()
                 Text("How do you feel after completing this goal?")
                     .font(.headline)
+                    .foregroundColor(.blue)
                 
-                RatingView(completedGoalsVM: completedGoalsVM, goal: goal, goalToDoVM : goalToDoVM, index: index).padding(.bottom, 40)
+                RatingView(completedGoalVM: completedGoalVM, goal: goal, goalToDoVM : goalToDoVM, index: index)
                 
             }
             .padding()
@@ -62,6 +57,6 @@ struct ModalEditView: View {
 
 struct ModalEditView_Previews: PreviewProvider {
     static var previews: some View {
-        ModalEditView(completedGoalsVM: GoalCompletedVM(), goal: goalDB[0], goalToDoVM: GoalToDoVM(), index: 1)
+        ModalEditView(completedGoalVM: GoalCompletedVM(), goal: goalDB[0], goalToDoVM: GoalToDoVM(), index: 1)
     }
 }
