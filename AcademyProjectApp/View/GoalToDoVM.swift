@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 class GoalToDoVM : ObservableObject{
     @Published var toDoGoals : [Goal] = []
     
