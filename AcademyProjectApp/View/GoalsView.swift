@@ -39,7 +39,7 @@ struct GoalsView: View {
                     
                         
                         .fullScreenCover(isPresented: $showSheet) {
-                            ModalView(rootActive: $rootActive, goal: goal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
+                            ModalView(rootActive: $rootActive, goal: $selectedGoal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
                                
                         }
                         
@@ -79,15 +79,15 @@ struct GoalsView: View {
                 
             }
         }.background(Color.gray.opacity(0.15))
-     
+            .navigationTitle("Add goals")
               
-            }.background(colorScheme == .light ? Color.gray.opacity(0.15) : .black)
+            }
             
             
         }
-        .navigationTitle("Add goals")
-    }
-}
+      
+    
+
 
 struct GoalsView_Previews: PreviewProvider {
     static var previews: some View {

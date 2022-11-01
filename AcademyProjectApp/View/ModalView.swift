@@ -89,13 +89,12 @@ struct ModalView: View {
 struct ModalView_Previews: PreviewProvider {
     static var previews: some View {
         ModalView(rootActive: .constant(false), goal: .constant(Goal(title: "", description: "")), index: 1, goalToDoVM: GoalToDoVM())
-        Group {
-            ModalView(rootActive: .constant(false), goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
-                .preferredColorScheme(.light)
-            ModalView(rootActive: .constant(false), goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
-                .preferredColorScheme(.dark)
+        
+//            ModalView(rootActive: .constant(false), goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
+           
+      
         }
       
     }
-}
+
 
