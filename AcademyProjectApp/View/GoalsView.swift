@@ -36,7 +36,7 @@ struct GoalsView: View {
                                 showSheet = true
                             }label: {
                                 HStack (spacing: 0) {
-                                    Label(goal.title, systemImage: " ")
+                                    Text(goal.title)
                                         .frame(maxWidth: .infinity)
                                         .foregroundColor(colorScheme == .light ? .black : .white)
                                     Spacer()

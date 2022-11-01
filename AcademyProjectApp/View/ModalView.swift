@@ -33,7 +33,7 @@ struct ModalView: View {
                             cancelClicked = true
                             dismiss()
                         } label: {
-                            Label("Cancel", systemImage: "")
+                            Text("Cancel")
                         }
                         
                         
@@ -43,7 +43,7 @@ struct ModalView: View {
                             
                             showingAlert = true
                         }label: {
-                            Label("Add", systemImage: "")
+                            Text("Add")
                         }
                         .alert("Are you sure you want to add this goal?", isPresented: $showingAlert) {
                             Button ("Add", role: .destructive) {

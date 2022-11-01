@@ -56,7 +56,7 @@ struct GoalCard: View {
                     editClicked = true
                     showSheet.toggle()
                 } label: {
-                    Label(goal.title, systemImage: "")
+                    Text(goal.title)
                         .frame(maxWidth: .infinity)
                         .foregroundColor(Color.blue)
                 }

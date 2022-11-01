@@ -32,7 +32,9 @@ struct TipCardView: View {
                     
                     Button(action: {
                         if(tipCardModel.savedTips.contains(where: {tip == $0})){
-                            tipCardModel.remove(savedTip: tip)
+                            withAnimation {
+                                tipCardModel.remove(savedTip: tip)
+                            }
                         }else{
                             tipCardModel.insert(savedTip: tip)
                         }

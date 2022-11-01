@@ -26,7 +26,7 @@ struct ModalEditView: View {
                         cancelClicked = true
                         dismiss()
                     } label: {
-                        Label("Cancel", systemImage: "")
+                        Text("Cancel")
                     }
                     
                     Spacer()
