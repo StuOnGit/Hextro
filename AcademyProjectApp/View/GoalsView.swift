@@ -38,7 +38,7 @@ struct GoalsView: View {
                         }label: {
                             
                             
-                            Label(goal.title, systemImage: " ")
+                           Text(goal.title)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .foregroundColor(colorScheme == .light ? .black : .white)
                             
