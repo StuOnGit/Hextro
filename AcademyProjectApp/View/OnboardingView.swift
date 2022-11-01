@@ -95,6 +95,7 @@ struct OnboardingView: View {
                 userName = name
                 userSurname = surname
                 userAvatar = avatar
+                
             })
             {
                 

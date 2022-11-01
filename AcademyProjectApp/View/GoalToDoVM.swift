@@ -12,6 +12,7 @@ class GoalToDoVM : ObservableObject{
     
     init(){
         toDoGoals = User.instance.toDoGoals
+        
     }
     
     func insert(toDoGoal: Goal, index: Int){

@@ -17,7 +17,7 @@ struct GoalCard: View {
     @Environment(\.colorScheme) var colorScheme
 
     
-    var goal : Goal
+    @Binding var goal : Goal
     var index: Int
     @ObservedObject var goalToDoVM : GoalToDoVM
     
@@ -55,7 +55,7 @@ struct GoalCard: View {
                         .foregroundColor(Color.blue)
                 }
                 .fullScreenCover(isPresented: $showSheet) {
-                    ModalEditView(goal: goal, goalToDoVM : goalToDoVM, index: index)
+                    ModalEditView(goal: $goal, goalToDoVM : goalToDoVM, index: index)
                 }
                 .padding()
                 .background {
@@ -72,9 +72,9 @@ struct GoalCard: View {
 struct GoalCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            GoalCard(goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
+            GoalCard(goal: .constant(Goal(title: "", description: "")), index: 1, goalToDoVM: GoalToDoVM())
                 .preferredColorScheme(.light)
-            GoalCard(goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
+            GoalCard(goal: .constant(Goal(title: "", description: "")), index: 1, goalToDoVM: GoalToDoVM())
                 .preferredColorScheme(.dark)
         }
       

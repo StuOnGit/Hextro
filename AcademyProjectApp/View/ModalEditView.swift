@@ -13,7 +13,7 @@ struct ModalEditView: View {
     @State private var cancelClicked = false
     @Environment(\.dismiss) var dismiss
     
-    var goal : Goal
+    @Binding var goal : Goal
     @ObservedObject var goalToDoVM : GoalToDoVM
     var index : Int
     
@@ -51,7 +51,7 @@ struct ModalEditView: View {
                 Text("How do you feel after completing this goal?")
                     .font(.headline)
                 
-                RatingView(completedGoalsVM: completedGoalsVM, goal: goal, goalToDoVM : goalToDoVM, index: index).padding(.bottom, 40)
+                RatingView(completedGoalsVM: completedGoalsVM, goal: $goal, goalToDoVM : goalToDoVM, index: index).padding(.bottom, 40)
                 
             }
             .padding()
@@ -62,6 +62,6 @@ struct ModalEditView: View {
 
 struct ModalEditView_Previews: PreviewProvider {
     static var previews: some View {
-        ModalEditView(completedGoalsVM: GoalCompletedVM(), goal: goalDB[0], goalToDoVM: GoalToDoVM(), index: 1)
+        ModalEditView(completedGoalsVM: GoalCompletedVM(), goal: .constant(goalDB[0]), goalToDoVM: GoalToDoVM(), index: 1)
     }
 }

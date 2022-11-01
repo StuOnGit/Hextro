@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-var Goals: [Goal] = [
-    Goal(title: "title", description: "description"),
-    Goal(title: "title2", description: "description2"),
-    Goal(title: "title", description: "description"),
-    Goal(title: "title2", description: "description2"),
-    Goal(title: "title", description: "description")
-]
-
 struct GoalsDashboardView: View {
     @State private var mainActive = false
     @State private var completedGoalClicked = false
@@ -33,7 +25,6 @@ struct GoalsDashboardView: View {
                     .font(.system(size: 28))
                 Spacer()
                 
-//                NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title, indexButtonTochange: index), isActive: $mainActive) { EmptyView() }
                 Button{
                     mainActive = true
                     completedGoalClicked = true
@@ -45,10 +36,9 @@ struct GoalsDashboardView: View {
             .padding(.top, 5)
 
             ForEach(0..<goalToDoVM.toDoGoals.count, id: \.self) {index in
-                GoalCard(goal: goalToDoVM.toDoGoals[index], index: index, goalToDoVM : goalToDoVM)
+                GoalCard(goal: $goalToDoVM.toDoGoals[index], index: index, goalToDoVM : goalToDoVM)
                     .padding(.vertical, 1)
             }
-
         }
         .padding(.bottom, 10)
     }
