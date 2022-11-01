@@ -42,13 +42,10 @@ struct GoalCard: View {
                 }
                 .padding()
                 .background {
-                    RoundedRectangle(cornerRadius: 8)
-                        .frame(maxWidth: .infinity)
-
-                        .foregroundColor(colorScheme == .light ? Color(red: 0.9490196078431372, green: 0.9450980392156862, blue: 0.9647058823529412) : Color(red: 0.08627450980392157, green: 0.08627450980392157, blue: 0.09411764705882353))
-
-                        //.foregroundColor(.gray.opacity(0.15))
-
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray.opacity(0.15), lineWidth: 2)
+                    .frame(maxWidth: .infinity)
+                    
                 }
             }else{
                 Button() {

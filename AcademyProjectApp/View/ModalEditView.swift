@@ -20,7 +20,7 @@ struct ModalEditView: View {
     var body: some View {
         
         ZStack{
-            VStack(spacing: 30){
+            VStack(alignment: .leading){
                 HStack{
                     Button {
                         cancelClicked = true

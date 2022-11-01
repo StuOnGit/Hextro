@@ -39,8 +39,9 @@ struct GoalsView: View {
                             
                             
                            Text(goal.title)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .frame(maxWidth: .infinity, alignment: .center)
                                 .foregroundColor(colorScheme == .light ? .black : .white)
+                                .multilineTextAlignment(.center)
                             
                             
                             
@@ -53,8 +54,8 @@ struct GoalsView: View {
                                 ModalView(rootActive: $rootActive, goal: $selectedGoal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
                             }
                             .padding([.top, .bottom], 15)
-                            .padding(.trailing, 10)
-                            .padding(.leading, 10)
+                            .padding(.trailing, 15)
+                            .padding(.leading, 20)
                             
                             .background {
                                 RoundedRectangle(cornerRadius: 10)
