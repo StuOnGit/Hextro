@@ -10,10 +10,12 @@ import SwiftUI
 @main
 struct AcademyProjectAppApp: App {
     var body: some Scene {
+        
         WindowGroup {
             ContentView()
         }
     }
+    
 }
 
 

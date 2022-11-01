@@ -51,7 +51,7 @@ struct GoalsDashboardView: View {
                 GoalCard(goal: goalToDoVM.toDoGoals[index], index: index, goalToDoVM : goalToDoVM, completedGoalVM: completedGoalVM)
                     .padding(.vertical, 1)
             }
-            
+
         }
         .padding(.bottom, 10)
     }

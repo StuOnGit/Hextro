@@ -10,15 +10,17 @@ import SwiftUI
 struct TipOfTodayView: View {
     
     @State private var savedTipsIsClicked = false
+    @StateObject var tipCardModel = TipCardModel()
+    
     
     var body: some View {
         
         
         VStack(spacing: 6){
-            TipCardView(tip: tipExample1)
+            TipCardView(tip:  tipExample1, tipCardModel: tipCardModel)
             
             
-            NavigationLink(destination: SavedTipsView(), isActive: $savedTipsIsClicked) { EmptyView() }
+            NavigationLink(destination: SavedTipsView(tipCardModel: tipCardModel), isActive: $savedTipsIsClicked) { EmptyView() }
             
             Button() {
                 savedTipsIsClicked = true
