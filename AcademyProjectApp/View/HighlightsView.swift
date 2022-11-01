@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct HighlitsView: View {
+struct HighlightsView: View {
     
     @State var pickerChoose: PickerEnum = PickerEnum.Day
     @Environment(\.colorScheme) var colorScheme
@@ -86,7 +86,7 @@ struct HighlitsView: View {
            
                 }
             
-            .padding(.top, 20)
+            .padding(.top, 15)
           
       
         
@@ -111,9 +111,9 @@ struct HighlitsView: View {
 struct HighlitsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HighlitsView()
+            HighlightsView()
                 .preferredColorScheme(.light)
-            HighlitsView()
+            HighlightsView()
                 .preferredColorScheme(.dark)
         }
      

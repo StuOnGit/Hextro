@@ -26,11 +26,12 @@ struct GoalsView: View {
 
         NavigationView {
             ScrollView {
-
-         
-                    VStack (alignment: .leading){
-                        
+                       
+                  
+                VStack (){
                         ForEach(goalDB) {goal in
+                            HStack () {
+                              
                             Button() {
                                 selectedGoal = goal
                                 showSheet = true
@@ -38,16 +39,24 @@ struct GoalsView: View {
                                 HStack (spacing: 0) {
                                     Text(goal.title)
                                         .frame(maxWidth: .infinity)
+                                
+                                    Label(goal.title, systemImage: " ")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                                         .foregroundColor(colorScheme == .light ? .black : .white)
-                                    Spacer()
+                                  
                                 }
                                 
                                 
                             }
-                            .padding()
+                                
+                           
                             .fullScreenCover(isPresented: $showSheet) {
                                 ModalView(rootActive: $rootActive, goal: $selectedGoal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
                             }
+                            .padding([.top, .bottom], 15)
+                            .padding(.trailing, 10)
+                            .padding(.leading, 10)
+                            
                             .background {
                                 RoundedRectangle(cornerRadius: 10)
                                     .frame(maxWidth: .infinity)

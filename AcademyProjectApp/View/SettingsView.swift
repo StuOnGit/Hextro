@@ -15,21 +15,18 @@ struct SettingsView: View {
         
         NavigationView {
             List{
-                VStack (spacing: 0) {
+                HStack () {
                     Toggle("Dark Mode", isOn: $isDarkMode)
-                        .listStyle(.inset)
+                     
                     
                 }
-          
+    
 
             }
-            
+           
           
-
-          
-            ContentView()
-           .preferredColorScheme(isDarkMode ? .dark : .light)
         }
+
         .navigationTitle("Settings")
 
        

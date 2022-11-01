@@ -11,29 +11,29 @@ struct SavedTipsView: View {
     
     
     @ObservedObject var tipCardModel : TipCardModel
-    
+
     @State var searchText = ""
     
     var body: some View {
+        ScrollView{
+            VStack(spacing: 0){
         
-        VStack(spacing: 0){
-            
-            
-                
-            ForEach(tipCardModel.savedTips){ tip in
+                ForEach(tipCardModel.savedTips){ tip in
                     TipCardView(tip: tip, tipCardModel: tipCardModel)
+                    
                 }
-           
-       
-            .searchable(text: $searchText)
-            
-            .navigationTitle("Saved tips")
-            
-            Spacer()
+                
+                
+                .searchable(text: $searchText)
+                
+                .navigationTitle("Saved tips")
+                
+                Spacer()
+                
+            }
+            .padding()
             
         }
-        .padding()
-        
     }
 }
 
