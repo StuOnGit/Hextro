@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    
     @AppStorage("userOnboarded") var userOnboarded: Bool = false
     @Environment(\.colorScheme) var colorScheme
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     var body: some View {
-        
+   
         if userOnboarded{
-            
-            
             NavigationView(){
                 ScrollView {
                     VStack {
@@ -24,7 +23,7 @@ struct ContentView: View {
                         Divider()
                         GoalsDashboardView()
                         Divider()
-                        HighlitsView()
+                        HighlightsView()
                         Spacer()
                     }
                     .padding()
@@ -56,18 +55,19 @@ struct ContentView: View {
             .navigationViewStyle(.stack)
             .navigationBarTitleDisplayMode(.inline)
             
+              .preferredColorScheme(isDarkMode ? .dark : .light)
         } else {
             OnboardingView()
         }
+        
     }
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             Group {
                 ContentView()
-                    .preferredColorScheme(.light)
-                ContentView()
-                    .preferredColorScheme(.dark)
+                                
+                    
             }
             
         }

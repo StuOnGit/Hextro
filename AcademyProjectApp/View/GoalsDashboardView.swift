@@ -33,7 +33,7 @@ struct GoalsDashboardView: View {
                     .font(.system(size: 28))
                 Spacer()
                 
-//                NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title, indexButtonTochange: index), isActive: $mainActive) { EmptyView() }
+
                 Button{
                     mainActive = true
                     completedGoalClicked = true
