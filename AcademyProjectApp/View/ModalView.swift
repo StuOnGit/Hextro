@@ -15,6 +15,8 @@ struct ModalView: View {
     //@State private var alertClicked = false
     
     @Binding var rootActive: Bool
+    @Environment(\.colorScheme) var colorScheme
+
     
     @Binding var goal : Goal
     var index : Int
@@ -22,10 +24,11 @@ struct ModalView: View {
     @ObservedObject var goalToDoVM : GoalToDoVM
     
     var body: some View {
-        
+     
             ZStack {
                 
-                VStack(spacing: 30){
+                VStack(alignment: .leading){
+                    
                     HStack{
                         Button {
                             cancelClicked = true
@@ -44,7 +47,6 @@ struct ModalView: View {
                             Label("Add", systemImage: "")
                         }
                         .alert("Are you sure you want to add this goal?", isPresented: $showingAlert) {
-                            
                             Button ("Add", role: .destructive) {
                                 rootActive = false
                                 goalToDoVM.insert(toDoGoal: goal, index: index)
@@ -54,29 +56,46 @@ struct ModalView: View {
                         }
                     }
                     
+                    
                     Text(goal.title)
                         .fontWeight(.bold)
                         .font(.system(size: 28))
-                        .padding(.top, 30)
+                        .padding(10)
+                        .foregroundColor(colorScheme == .light ? .black : .white)
+                   
                     
                     Text(goal.description)
+              
+                        .padding(.leading, 10)
+                        .padding(.trailing, 10)
+                        .foregroundColor(colorScheme == .light ? .black : .white)
                     
                     Spacer()
                 }
-                .padding()
+           
                 
             }
+    
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+           
             .padding()
+            .background(colorScheme == .light ? .white : .black)
         
-        
-        
+   
     }
+    
 }
 
 struct ModalView_Previews: PreviewProvider {
     static var previews: some View {
         ModalView(rootActive: .constant(false), goal: .constant(Goal(title: "", description: "")), index: 1, goalToDoVM: GoalToDoVM())
+        Group {
+            ModalView(rootActive: .constant(false), goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
+                .preferredColorScheme(.light)
+            ModalView(rootActive: .constant(false), goal: goalDB[0], index: 1, goalToDoVM: GoalToDoVM())
+                .preferredColorScheme(.dark)
+        }
+      
     }
 }
 

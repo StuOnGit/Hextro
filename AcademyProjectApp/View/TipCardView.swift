@@ -24,6 +24,7 @@ struct TipCardView: View {
                         .foregroundColor(.white)
                         .font(.system(size: 28))
                         .fontWeight(.bold)
+                        
                     
                     Spacer()
                     
