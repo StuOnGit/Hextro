@@ -14,61 +14,79 @@ struct GoalsView: View {
     @State private var showSheet = false
     @Binding var completedGoalClicked: Bool
     @Binding var addGoalIsClicked: Bool
-
+    
     @ObservedObject var goalToDoVM : GoalToDoVM
     @State private var selectedGoal : Goal = Goal(title: "", description: "")
+    @Environment(\.colorScheme) var colorScheme
+    
     var indexButtonTochange: Int
     
     var body: some View {
         
-        NavigationView{
-            
-            
+
+        NavigationView {
             ScrollView {
-                VStack(){
-//                    HStack{
-//                        Text("Add goals")
-//                            .fontWeight(.bold)
-//                            .font(.system(size: 28))
-//                        Spacer()
-//                    }
-                 //   .padding()
-                    
-                    ForEach(goalDB) {goal in
-                        Button() {
-                            selectedGoal = goal
-                            showSheet = true
-                        }label: {
-                            Label(goal.title, systemImage: " ")
-                                .frame(maxWidth: .infinity)
-                                .foregroundColor(.black)
+
+         
+                    VStack (alignment: .leading){
+                        
+                        ForEach(goalDB) {goal in
+                            Button() {
+                                selectedGoal = goal
+                                showSheet = true
+                            }label: {
+                                HStack (spacing: 0) {
+                                    Label(goal.title, systemImage: " ")
+                                        .frame(maxWidth: .infinity)
+                                        .foregroundColor(colorScheme == .light ? .black : .white)
+                                    Spacer()
+                                }
+                                
+                                
+                            }
+                            .padding()
+                            .fullScreenCover(isPresented: $showSheet) {
+                                ModalView(rootActive: $rootActive, goal: $selectedGoal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
+                            }
+                            .background {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(colorScheme == .light ? Color(red: 0.9490196078431372, green: 0.9450980392156862, blue: 0.9647058823529412) : Color(red: 0.08627450980392157, green: 0.08627450980392157, blue: 0.09411764705882353))
+                                
+                            }
                         }
-                        .padding()
-                        .fullScreenCover(isPresented: $showSheet) {
-                            ModalView(rootActive: $rootActive, goal: $selectedGoal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
-                        }
-                        .background {
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(maxWidth: .infinity)
-                                .foregroundColor(.white)
-                        }
+                        
+                        .padding(3)
                     }
-                    .padding(4)
-                    
-                }
-            }//.background(Color.gray.opacity(0.15))
+                
+                .padding()
+                
+            }
+           
             
-        
         }
         .navigationTitle("Add goals")
-    }
-}
+       
+        
+       
+     
+              
+            }
+     
+       
+            
+        }
+      
 
 struct GoalsView_Previews: PreviewProvider {
     static var previews: some View {
+
+            GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false),
+                       goalToDoVM: GoalToDoVM() ,indexButtonTochange: 1)
+
         
-        GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false),
-            goalToDoVM: GoalToDoVM() ,indexButtonTochange: 1)
+     
     }
     
 }
+

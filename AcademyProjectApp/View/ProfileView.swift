@@ -12,8 +12,6 @@ struct ProfileView: View {
     @AppStorage("userSurname") var userSurname: String = " "
     @AppStorage("userAvatar") var userAvatar: Data?
     @Environment(\.colorScheme) var colorScheme
-
-   
     
     var body: some View {
         NavigationView() {
@@ -29,9 +27,9 @@ struct ProfileView: View {
                             .clipShape(Circle())
                             .padding(.top, 40)
                     }
+                    
                     HStack(){
                         Text("\(userName) \(userSurname)")
-                        
                             .fixedSize()
                             .font(.system(size: 40).bold())
                             .foregroundColor(colorScheme == .dark ? .white : .black)
@@ -41,18 +39,17 @@ struct ProfileView: View {
                             .padding(.bottom, 150)
                     }
                 }
-                
             }
-           
             
         }
         .navigationTitle("Profile")
     }
     
-    struct ProfileView_Previews: PreviewProvider {
-        static var previews: some View {
-            ProfileView()
-        
-        }
+}
+
+
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
     }
 }

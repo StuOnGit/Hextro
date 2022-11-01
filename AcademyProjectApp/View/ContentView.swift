@@ -10,11 +10,10 @@ import SwiftUI
 struct ContentView: View {
 
     @AppStorage("userOnboarded") var userOnboarded: Bool = false
-    //@AppStorage("systemMode") var systemMode
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-
+        
         if userOnboarded{
             
             
@@ -64,12 +63,11 @@ struct ContentView: View {
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            Group{
+            Group {
                 ContentView()
                     .preferredColorScheme(.light)
                 ContentView()
                     .preferredColorScheme(.dark)
-               
             }
             
         }

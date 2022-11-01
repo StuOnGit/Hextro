@@ -90,7 +90,6 @@ struct OnboardingView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding(.trailing, 20)
                 .padding(.leading, 20)
-    
             Button(action: {
                 userOnboarded = true
                 userName = name
@@ -111,9 +110,7 @@ struct OnboardingView: View {
                     }
                     .padding(.top, 80)
                     .padding(.bottom, 70)
-                
             }
-            
             
             
             

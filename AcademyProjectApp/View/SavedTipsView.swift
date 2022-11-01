@@ -32,7 +32,7 @@ struct SavedTipsView: View {
             Spacer()
             
         }
-        
+        .padding()
         
     }
 }

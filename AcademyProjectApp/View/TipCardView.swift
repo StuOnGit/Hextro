@@ -17,13 +17,14 @@ struct TipCardView: View {
     var body: some View {
         
         ZStack{
-            VStack(alignment: .leading, spacing: 15){
+            VStack(alignment: .leading, spacing: 10){
                 
                 HStack(alignment: .firstTextBaseline){
                     Text(tip.title)
                         .foregroundColor(.white)
                         .font(.system(size: 28))
                         .fontWeight(.bold)
+                        
                     
                     Spacer()
                     
