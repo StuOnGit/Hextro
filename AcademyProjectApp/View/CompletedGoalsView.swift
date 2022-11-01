@@ -10,77 +10,74 @@ import SwiftUI
 struct CompletedGoalsView: View {
     
     @ObservedObject var completedGoalVM : GoalCompletedVM
+    @Environment(\.colorScheme) var colorScheme
+    
     
     var body: some View {
         
-        ScrollView {
-            VStack(){
-                HStack{
-                    Text("Completed goals")
-                        .fontWeight(.bold)
-                        .font(.system(size: 28))
-                    Spacer()
-                }
-                .padding()
-                
-   // ----- test preview
-                Button() {
-                }label: {
-                    Text("This is a test test test test with other test text")
-                        .multilineTextAlignment(.leading)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.black)
-                        .padding(.horizontal)
-
-                    Image("bad")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 30, height: 30)
-                        .padding(.horizontal)
-                }
-                .padding()
-                .background {
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .padding(.horizontal)
-                }
-    // ------ end test preview
-                
-                ForEach(completedGoalVM.completedGoals) {goal in
-                    Text(String(completedGoalVM.completedGoals.count))
-                    Button() {
-                    }label: {
-                        Text(goal.title)
-                        Text(goal.rating == nil ? "nil" : "non nil")
-                            .multilineTextAlignment(.leading)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(.black)
-                            .padding(.horizontal)
-                        
-//                        Label(goal.title, systemImage: "")
-//                            .frame(maxWidth: .infinity, alignment: .leading)
-//                            .foregroundColor(.black)
-                        
-//                        Image("\(goal.rating!.rawValue)")
-//                            .resizable()
-//                            .scaledToFill()
-//                            .frame(width: 30, height: 30)
-//                            .padding(.horizontal)
+        NavigationView {
+            ScrollView {
+                VStack(){
+                    ForEach(completedGoalVM.completedGoals) {goal in
+                        ExpandView(goal: goal)
+                            .padding(.horizontal, 4)
                     }
-                    .padding()
-                    .background {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(.white)
-                            .padding(.horizontal)
-                    }
+                    .padding(4)
+                  
                 }
-                .padding(4)
             }
-        }.background(Color.gray.opacity(0.10))
+        }
+        .navigationTitle("Completed Goals")
     }
     }
+
+struct ExpandView : View{
+    var goal : Goal
+    
+    @State var isExpand = false
+    @Environment(\.colorScheme) var colorScheme
+    
+    var body : some View {
+        VStack{
+            HStack{
+                Text(goal.title)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundColor(.black)
+                    .padding(.horizontal)
+                
+                Image("\(goal.rating!.rawValue)")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 30, height: 30)
+                    .padding(.horizontal)
+            }
+            if isExpand {
+                Text(goal.description)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundColor(.black)
+                    .padding(.horizontal)
+            }
+        }
+        .padding()
+        .background {
+            RoundedRectangle(cornerRadius: 10)
+                .frame(maxWidth: .infinity)
+                .foregroundColor(colorScheme == .light ? Color(red: 0.9490196078431372, green: 0.9450980392156862, blue: 0.9647058823529412) : Color(red: 0.08627450980392157, green: 0.08627450980392157, blue: 0.09411764705882353))
+                
+        }
+
+        .transition(.move(edge: .bottom))
+        .onTapGesture {
+            withAnimation {
+                isExpand.toggle()
+            }
+            
+        }
+       
+    }
+}
 
 struct CompletedGoalsView_Previews: PreviewProvider {
     static var previews: some View {
