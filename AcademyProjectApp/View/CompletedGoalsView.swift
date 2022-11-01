@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CompletedGoalsView: View {
     
-    @ObservedObject var completedGoalsVM : GoalCompletedVM
+    @ObservedObject var completedGoalVM : GoalCompletedVM
     
     var body: some View {
         
@@ -47,22 +47,26 @@ struct CompletedGoalsView: View {
                 }
     // ------ end test preview
                 
-                ForEach(completedGoalsVM.completedGoals) {goal in
+                ForEach(completedGoalVM.completedGoals) {goal in
+                    Text(String(completedGoalVM.completedGoals.count))
                     Button() {
                     }label: {
                         Text(goal.title)
+                        Text(goal.rating == nil ? "nil" : "non nil")
                             .multilineTextAlignment(.leading)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .foregroundColor(.black)
                             .padding(.horizontal)
+                        
 //                        Label(goal.title, systemImage: "")
 //                            .frame(maxWidth: .infinity, alignment: .leading)
 //                            .foregroundColor(.black)
-                        Image("\(goal.rating.rawValue)")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 30, height: 30)
-                            .padding(.horizontal)
+                        
+//                        Image("\(goal.rating!.rawValue)")
+//                            .resizable()
+//                            .scaledToFill()
+//                            .frame(width: 30, height: 30)
+//                            .padding(.horizontal)
                     }
                     .padding()
                     .background {
@@ -80,6 +84,6 @@ struct CompletedGoalsView: View {
 
 struct CompletedGoalsView_Previews: PreviewProvider {
     static var previews: some View {
-        CompletedGoalsView(completedGoalsVM: GoalCompletedVM())
+        CompletedGoalsView(completedGoalVM: GoalCompletedVM())
     }
 }

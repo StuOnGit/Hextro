@@ -21,7 +21,7 @@ struct Goal: Identifiable, Equatable{
     var isAdded: Bool = false
     var completed: Bool = false
     var completionDate : Date?
-    var rating: RatingEnum = RatingEnum.Average
+    var rating: RatingEnum?
     var tips: [Tip]?
     //TODO: implement other stuff
     

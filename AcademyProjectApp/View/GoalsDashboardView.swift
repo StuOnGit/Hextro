@@ -35,7 +35,7 @@ struct GoalsDashboardView: View {
                 Spacer()
                 
 //                NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, title: title, indexButtonTochange: index), isActive: $mainActive) { EmptyView() }
-                NavigationLink(destination: CompletedGoalsView(completedGoalsVM: completedGoalVM), isActive: $completedGoalClicked) { EmptyView() }
+                NavigationLink(destination: CompletedGoalsView(completedGoalVM: completedGoalVM), isActive: $completedGoalClicked) { EmptyView() }
                 
                 Button{
                     mainActive = true

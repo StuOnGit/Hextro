@@ -17,7 +17,7 @@ struct RatingView: View {
     @ObservedObject var goalToDoVM : GoalToDoVM
     var index : Int
     
-    @State private var selectedItem : RatingEnum = RatingEnum.Poor
+    @State private var selectedItem : RatingEnum = RatingEnum.Average
     
     
     var body: some View {
@@ -35,7 +35,8 @@ struct RatingView: View {
                 }
                 .alert("Do you want to save this rating? " + "(" + selectedItem.rawValue + ")", isPresented: $showingAlert) {
                     Button ("Yes", role: .destructive) {
-                        goal.rating = selectedItem
+                        goal.rating = RatingEnum.strToRatingEnum(str: selectedItem.rawValue)
+                        print(selectedItem.rawValue)
                         completedGoalVM.addCompletedGoal(completedGoal: goal)
                         goalToDoVM.remove(toDoGoal: goal, index: index)
                     }
