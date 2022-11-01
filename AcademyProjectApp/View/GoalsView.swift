@@ -23,33 +23,32 @@ struct GoalsView: View {
     
     var body: some View {
         
-
+        
         NavigationView {
             ScrollView {
-                       
-                  
+                
+                
                 VStack (){
-                        ForEach(goalDB) {goal in
-                            HStack () {
-                              
-                            Button() {
-                                selectedGoal = goal
-                                showSheet = true
-                            }label: {
-                                HStack (spacing: 0) {
-                                    Text(goal.title)
-                                        .frame(maxWidth: .infinity)
-                                
-                                    Label(goal.title, systemImage: " ")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                        .foregroundColor(colorScheme == .light ? .black : .white)
-                                  
-                                }
-                                
-                                
-                            }
-                                
-                           
+                    ForEach(goalDB) {goal in
+                        
+                        
+                        Button() {
+                            selectedGoal = goal
+                            showSheet = true
+                        }label: {
+                            
+                            
+                            Label(goal.title, systemImage: " ")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .foregroundColor(colorScheme == .light ? .black : .white)
+                            
+                            
+                            
+                            
+                        }
+                    
+                            
+                            
                             .fullScreenCover(isPresented: $showSheet) {
                                 ModalView(rootActive: $rootActive, goal: $selectedGoal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
                             }
@@ -67,33 +66,33 @@ struct GoalsView: View {
                         
                         .padding(3)
                     }
-                
-                .padding()
+                    
+                    .padding()
+                }
             }
-        }
-        .navigationTitle("Add goals")
-       
-        
-       
-
-     
-              
-            }
-     
-       
+            .navigationTitle("Add goals")
+            
+            
+            
+            
+            
             
         }
-      
-
-struct GoalsView_Previews: PreviewProvider {
-    static var previews: some View {
-
-            GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false),
-                       goalToDoVM: GoalToDoVM() ,indexButtonTochange: 1)
-
         
-     
-    }
+        
+        
     
+    
+    
+    struct GoalsView_Previews: PreviewProvider {
+        static var previews: some View {
+            
+            GoalsView(rootActive: .constant(false), completedGoalClicked: .constant(false), addGoalIsClicked: .constant(false),
+                      goalToDoVM: GoalToDoVM() ,indexButtonTochange: 1)
+            
+            
+            
+        }
+        
+    }
 }
-

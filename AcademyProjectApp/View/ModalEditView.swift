@@ -36,10 +36,11 @@ struct ModalEditView: View {
                 Text(goal.title)
                     .fontWeight(.bold)
                     .font(.system(size: 28))
-                    .padding(.top, 30)
+                 
+                    .padding(10)
                 
                 Text(goal.description)
-                    .padding()
+                    .padding(10)
                 Spacer()
                 Divider()
                 Text("How do you feel after completing this goal?")

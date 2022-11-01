@@ -41,8 +41,10 @@ struct ExpandView : View{
         VStack{
             HStack{
                 Text(goal.title)
+                    .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    
                     .foregroundColor(.black)
                     .padding(.horizontal)
                 
@@ -75,7 +77,7 @@ struct ExpandView : View{
             }
             
         }
-       
+        .padding()
     }
 }
 
