@@ -21,40 +21,46 @@ struct GoalsView: View {
     
     var body: some View {
         
-        ScrollView {
-            VStack(){
-                HStack{
-                    Text("Add goals")
-                        .fontWeight(.bold)
-                        .font(.system(size: 28))
-                    Spacer()
+        NavigationView{
+            
+            
+            ScrollView {
+                VStack(){
+//                    HStack{
+//                        Text("Add goals")
+//                            .fontWeight(.bold)
+//                            .font(.system(size: 28))
+//                        Spacer()
+//                    }
+                 //   .padding()
+                    
+                    ForEach(goalDB) {goal in
+                        Button() {
+                            selectedGoal = goal
+                            showSheet = true
+                        }label: {
+                            Label(goal.title, systemImage: " ")
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(.black)
+                        }
+                        .padding()
+                        .fullScreenCover(isPresented: $showSheet) {
+                            ModalView(rootActive: $rootActive, goal: $selectedGoal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
+                        }
+                        .background {
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .padding(4)
+                    
                 }
-                .padding()
-                
-                ForEach(goalDB) {goal in
-                    Button() {
-                        selectedGoal = goal
-                        showSheet = true
-                    }label: {
-                        Label(goal.title, systemImage: " ")
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(.black)
-                    }
-                    .padding()
-                    .fullScreenCover(isPresented: $showSheet) {
-                        ModalView(rootActive: $rootActive, goal: $selectedGoal, index: indexButtonTochange, goalToDoVM: goalToDoVM)
-                    }
-                    .background {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(.white)
-                    }
-                }
-                .padding(4)
-                
-            }
-        }.background(Color.gray.opacity(0.15))
-     
+            }//.background(Color.gray.opacity(0.15))
+            
+        
+        }
+        .navigationTitle("Add goals")
     }
 }
 
