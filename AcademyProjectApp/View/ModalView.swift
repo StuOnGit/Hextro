@@ -46,11 +46,14 @@ struct ModalView: View {
                             Text("Add")
                         }
                         .alert("Are you sure you want to add this goal?", isPresented: $showingAlert) {
-                            Button ("Add", role: .destructive) {
+                            Button ("Add") {
                                 dismiss()
                                 rootActive = false
                                 goalDB.removeAll(where: {goal == $0})
                                 goalToDoVM.insert(toDoGoal: goal, index: index)
+                            }
+                            Button ("Cancel", role: .cancel) {
+                                dismiss()
                             }
                             
                         }

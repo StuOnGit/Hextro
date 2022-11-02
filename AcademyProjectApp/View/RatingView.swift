@@ -35,10 +35,13 @@ struct RatingView: View {
                         .frame(width: 50, height: 50)
                 }
                 .alert("Do you want to save this rating? " + "(" + selectedItem.rawValue + ")", isPresented: $showingAlert) {
-                    Button ("Yes", role: .destructive) {
+                    Button ("Yes") {
                         goal.rating = selectedItem
                         completedGoalVM.addCompletedGoal(completedGoal: goal)
                         goalToDoVM.remove(toDoGoal: goal, index: index)
+                    }
+                    Button ("Cancel", role: .cancel) {
+                      
                     }
                     
                 }
