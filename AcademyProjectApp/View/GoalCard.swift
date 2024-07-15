@@ -28,8 +28,6 @@ struct GoalCard: View {
         VStack{
             NavigationLink(destination: GoalsView(rootActive: $mainActive, completedGoalClicked: $completedGoalClicked, addGoalIsClicked: $addGoalIsClicked, goalToDoVM: goalToDoVM, indexButtonTochange: index), isActive: $mainActive) {EmptyView()}
             
-            
-            
             if (goal.title == "") {
                 Button() {
                     mainActive = true

@@ -10,7 +10,6 @@ import SwiftUI
 struct GoalsDashboardView: View {
     @State private var mainActive = false
     @State private var completedGoalClicked = false
-    @State var addGoalIsClicked = false
     @State var title: String = ""
     
     @StateObject var goalToDoVM = GoalToDoVM()

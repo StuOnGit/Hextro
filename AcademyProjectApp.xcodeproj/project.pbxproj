@@ -146,6 +146,7 @@
 				E159119D2906C2150067AAB3 /* View */,
 				E159119C2906C20B0067AAB3 /* Models */,
 				8A4A263629016BD8006CCF45 /* AcademyProjectAppApp.swift */,
+				8A4A263829016BD8006CCF45 /* ContentView.swift */,
 				8A4A263A29016BD8006CCF45 /* Assets.xcassets */,
 				8A4A263C29016BD8006CCF45 /* Preview Content */,
 			);
@@ -202,7 +203,6 @@
 		E159119D2906C2150067AAB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8A4A263829016BD8006CCF45 /* ContentView.swift */,
 				E15911A32906C3180067AAB3 /* HighlightsView.swift */,
 				E15911A52906C63A0067AAB3 /* TipCardView.swift */,
 				9128B62829080F2A0075AC47 /* GoalCard.swift */,
@@ -545,7 +545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyProjectApp/Preview Content\"";
-				DEVELOPMENT_TEAM = NUWU6B2G25;
+				DEVELOPMENT_TEAM = 4BNM7WSTN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Hextro;
@@ -576,7 +576,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AcademyProjectApp/Preview Content\"";
-				DEVELOPMENT_TEAM = NUWU6B2G25;
+				DEVELOPMENT_TEAM = 4BNM7WSTN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Hextro;

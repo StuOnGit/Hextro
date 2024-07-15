@@ -27,7 +27,6 @@ class User {
         for i in 1...MAX_GOALS_TO_DO {
             toDoGoals.append(Goal(title: "", description: ""))
         }
-        
     }
     
     public func addSavedTip(tip: Tip){
